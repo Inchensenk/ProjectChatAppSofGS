@@ -5,8 +5,76 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Client.Views"
         mc:Ignorable="d"
-        Title="RegistrationWindowView" Height="450" Width="800">
-    <Grid>
-        
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="RegistrationWindowView" 
+        Height="450" 
+        Width="800">
+    <Grid Background = "transparent">
+
+        <Border MinWidth="750" 
+                Margin="15,0,15,0" 
+                Background= "AliceBlue"
+                VerticalAlignment="Center"
+                Padding="30"
+                MaxWidth="550"
+                CornerRadius="20" Height="414">
+
+            <!--Эффект тени-->
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30"
+                                  Color="LightGray"
+                                  ShadowDepth="0"/>
+            </Border.Effect>
+
+            <StackPanel Cursor="">
+                <TextBlock Text="Регистрация"
+                           TextAlignment="Center"
+                           FontSize="30"
+                           FontWeight="Bold"
+                           Margin="0 0 0 20"/>
+
+
+                <!--Текстбокс с подсказкой "Введите логин", подсказка анимирует при в вводе-->
+                <TextBox x:Name="textBoxLogin"
+                         materialDesign:HintAssist.Hint="Введите логин"
+                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+
+                <TextBox x:Name="textBoxFirsName"
+                         materialDesign:HintAssist.Hint="Введите имя"
+                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+
+                <TextBox x:Name="textBoxLastName"
+                         materialDesign:HintAssist.Hint="Введите Фамилию"
+                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+
+                <PasswordBox x:Name="passBox"    
+                             materialDesign:HintAssist.Hint="Введите пароль"
+                             Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"/>
+
+                <PasswordBox x:Name="passBox2"
+                             materialDesign:HintAssist.Hint="Повторите пароль"
+                             Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"/>
+
+                <TextBox x:Name="textBoxPhone"
+                         materialDesign:HintAssist.Hint="Телефон"
+                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+
+                <Button x:Name="regButton"
+                        Content="Зарегистрироваться"
+                        Margin="0 20"/>
+
+                <TextBlock Text="Уже есть аккаунт?"
+                           TextAlignment="Center"
+                           FontSize="15"
+                           FontWeight="Bold"
+                           Margin="0 0 0 5"/>
+
+                <Button HorizontalAlignment="Center"
+                        Content="Авторизация"
+                        Width="490"/>
+
+            </StackPanel>
+
+        </Border>
     </Grid>
 </Window>

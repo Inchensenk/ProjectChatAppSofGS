@@ -27,8 +27,14 @@ namespace Client.Stores
             }
         }
 
+        /// <summary>
+        /// Событие изменения главного окна
+        /// </summary>
         public event Action CurrentViewModelChanged = null!;
 
+        /// <summary>
+        /// Метод вызывающий текущую VM
+        /// </summary>
         private void OnCurrentViewModelChanged()
         {
             CurrentViewModelChanged?.Invoke();

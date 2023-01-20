@@ -22,10 +22,10 @@ namespace Client.ViewModels
         {
             _navigationStore = navigationStore;
 
-            _navigationStore.CurrentViewModelChanged += _navigationStore_CurrentViewModelChanged;
+            _navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
         }
 
-        private void _navigationStore_CurrentViewModelChanged()
+        private void OnCurrentViewModelChanged()
         {
             OnPropertyChanged(nameof(CurrentViewModel));
         }

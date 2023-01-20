@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using
+using Client.Models;
 
 namespace Client.DbContexts
 {
@@ -13,5 +15,7 @@ namespace Client.DbContexts
         {
 
         }
+
+        public DbSet<User> Users { get; set; }
     }
 }

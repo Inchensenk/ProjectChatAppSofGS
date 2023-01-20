@@ -11,10 +11,29 @@
         Height="450" 
         Width="800">
     <Grid>
+        
         <!--Управление контентом, который будет отоброжать главная вью модель-->
         <ContentControl Content="{Binding CurrentViewModel}"/>
-
-        <views:AuthorizationWindowView DataContext="{Binding CurrentViewModel}"/>
         
+        <views:AuthorizationWindowView DataContext="{Binding CurrentViewModel}"/>
+
+        <Grid.Resources>
+            
+            <!--Сопоставление RegistrationWindowViewModel с RegistrationWindowView-->
+            <DataTemplate DataType="{x:Type vms:RegistrationWindowViewModel}">
+                <views:RegistrationWindowView/>
+            </DataTemplate>
+
+            <!--Сопоставление AuthorizationWindowViewModel с AuthorizationWindowView-->
+            <DataTemplate DataType="{x:Type vms:AuthorizationWindowViewModel}">
+                <views:AuthorizationWindowView/>
+            </DataTemplate>
+
+            <!--Сопоставление ChatsWindowViewModel с ChatsWindowView-->
+            <DataTemplate DataType="{x:Type vms:ChatsWindowViewModel}">
+                <views:ChatsWindowView/>
+            </DataTemplate>
+
+        </Grid.Resources>
     </Grid>
 </Window>

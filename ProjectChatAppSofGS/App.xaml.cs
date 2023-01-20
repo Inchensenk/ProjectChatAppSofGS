@@ -1,6 +1,7 @@
 ﻿using Client.DbContexts;
 using Client.Stores;
 using Client.ViewModels;
+using Client.Views;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -45,13 +46,18 @@ namespace ProjectChatAppSofGS
                 dbContext.Database.Migrate();
             }
 
-            //////////////////////
+            _navigationStore.CurrentViewModel = CreateRegistrationWindowViewModel();
 
             MainWindow = new MainWindow()
             {
                 DataContext = new MainWindowViewModel(_navigationStore)
             };
 
+        }
+
+        private ViewModelBase CreateRegistrationWindowViewModel()
+        {
+            throw new NotImplementedException();
         }
     }
 }
