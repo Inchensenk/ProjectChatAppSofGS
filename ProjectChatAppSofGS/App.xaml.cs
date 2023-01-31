@@ -21,7 +21,7 @@ namespace ProjectChatAppSofGS
         /// <summary>
         /// Строка подключения
         /// </summary>
-        private const string CONNECTION_STRING = "@Data Source=s-dev-01; " +
+        private const string CONNECTION_STRING = "@Data Source=PIXEL; " +
                                                   "Database=ChatAppSofDB; " +
                                                   "Integrated Security=True;" +
                                                   "Connect Timeout=30; " +

@@ -12,7 +12,7 @@ namespace Client.DbContexts
     {
         public ApplicationDbContext CreateDbContext(string[] args)
         {
-            DbContextOptions options = new DbContextOptionsBuilder().UseSqlServer(@"Data Source=s-dev-01; Database=ChatAppSofDB; Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False").Options;
+            DbContextOptions options = new DbContextOptionsBuilder().UseSqlServer(@"Data Source=PIXEL; Database=ChatAppSofDB; Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False").Options;
             return new ApplicationDbContext(options);
         }
     }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
         xmlns:vms="clr-namespace:Client.ViewModels" 
         xmlns:views="clr-namespace:Client.Views"
-        d:DataContext="{d:DesignInstance Type=vms:MainWindowViewModel}"
+        d:DataContext="{d:DesignInstance Type = vms:MainWindowViewModel}"
         mc:Ignorable="d"
         Title="MainWindow" 
         Height="450" 

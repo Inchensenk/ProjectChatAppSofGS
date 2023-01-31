@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Client.ViewModels
 {
-    public class ChatsWindowViewModel
+    public class ChatsWindowViewModel : ViewModelBase
     {
+
     }
 }
