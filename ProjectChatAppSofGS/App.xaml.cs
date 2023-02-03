@@ -43,10 +43,12 @@ namespace ProjectChatAppSofGS
 
             _navigationStore.CurrentViewModel = CreateRegistrationWindowViewModel();
 
+            //Глаавное окно с контекстом данных
             MainWindow = new MainWindow()
             {
                 DataContext = new MainWindowViewModel(_navigationStore)
             };
+
             MainWindow.Show();
             base.OnStartup(e);
         }
