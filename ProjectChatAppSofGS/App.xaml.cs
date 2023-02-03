@@ -21,14 +21,7 @@ namespace ProjectChatAppSofGS
         /// <summary>
         /// Строка подключения
         /// </summary>
-        private const string CONNECTION_STRING = "@Data Source=PIXEL; " +
-                                                  "Database=ChatAppSofDB; " +
-                                                  "Integrated Security=True;" +
-                                                  "Connect Timeout=30; " +
-                                                  "Encrypt=False; " +
-                                                  "TrustServerCertificate=False; " +
-                                                  "ApplicationIntent=ReadWrite; " +
-                                                  "MultiSubnetFailover=False";
+        private const string CONNECTION_STRING = "@Data Source=PIXEL;Database=ChatAppSofDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite; MultiSubnetFailover=False";
 
         private readonly NavigationStore _navigationStore;
 
@@ -43,6 +36,8 @@ namespace ProjectChatAppSofGS
 
             using (ApplicationDbContext dbContext = new ApplicationDbContext(options))
             {
+                dbContext.Database.EnsureCreated();
+                var canConnect = dbContext.Database.CanConnect();
                 dbContext.Database.Migrate();
             }
 
@@ -52,12 +47,11 @@ namespace ProjectChatAppSofGS
             {
                 DataContext = new MainWindowViewModel(_navigationStore)
             };
-
+            MainWindow.Show();
+            base.OnStartup(e);
         }
 
-        private ViewModelBase CreateRegistrationWindowViewModel()
-        {
-            throw new NotImplementedException();
-        }
+        private RegistrationWindowViewModel CreateRegistrationWindowViewModel()=> new RegistrationWindowViewModel();
+       
     }
 }

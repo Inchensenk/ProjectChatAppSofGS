@@ -11,6 +11,6 @@ namespace Client.ViewModels
     {
         public string Name => "Gevork";
 
-        public ICommand Na
+        
     }
 }

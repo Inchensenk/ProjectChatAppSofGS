@@ -14,6 +14,7 @@ namespace Client.DbContexts
         public ApplicationDbContextFactory(string connectionString)
         {
             _connectionString = connectionString;
+
         }
 
         public ApplicationDbContext CreateDbContext()

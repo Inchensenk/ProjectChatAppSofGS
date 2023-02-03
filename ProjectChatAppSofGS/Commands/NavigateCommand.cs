@@ -21,7 +21,7 @@ namespace Client.Commands
 
         public override void Execute(object? parameter)
         {
-            throw new NotImplementedException();
+            _navigationService.Navigate();
         }
     }
 }

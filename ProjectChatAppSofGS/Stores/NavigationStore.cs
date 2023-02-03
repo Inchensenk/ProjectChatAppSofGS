@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Client.Stores
 {
     /// <summary>
-    /// Класс навигации хранит текущую VM для приложения
+    /// Класс навигации, хранит текущую VM для приложения
     /// </summary>
     public class NavigationStore
     {
