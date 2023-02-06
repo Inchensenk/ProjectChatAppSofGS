@@ -41,7 +41,7 @@ namespace ProjectChatAppSofGS
                 dbContext.Database.Migrate();
             }
 
-            _navigationStore.CurrentViewModel = CreateRegistrationWindowViewModel();
+            _navigationStore.CurrentViewModel = CreateRegistrationUserControlViewModel();
 
             //Глаавное окно с контекстом данных
             MainWindow = new MainWindow()
@@ -53,7 +53,7 @@ namespace ProjectChatAppSofGS
             base.OnStartup(e);
         }
 
-        private RegistrationUserControlViewModel CreateRegistrationWindowViewModel()=> new RegistrationUserControlViewModel();
+        private RegistrationUserControlViewModel CreateRegistrationUserControlViewModel()=> new RegistrationUserControlViewModel();
        
     }
 }

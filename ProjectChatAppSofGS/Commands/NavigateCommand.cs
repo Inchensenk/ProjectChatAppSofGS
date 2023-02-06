@@ -12,6 +12,7 @@ namespace Client.Commands
 {
     public class NavigateCommand : CommandBase
     {
+
         private readonly NavigationService _navigationService;
 
         public NavigateCommand(NavigationService navigationService)
