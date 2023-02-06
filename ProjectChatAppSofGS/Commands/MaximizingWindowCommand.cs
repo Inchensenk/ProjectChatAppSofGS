@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Input;
 
 namespace Client.Commands
 {
@@ -24,6 +25,11 @@ namespace Client.Commands
             {
                 Application.Current.MainWindow.WindowState = WindowState.Normal;
             }
+        }
+
+        public override void Execute(object parameter, MouseButtonEventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }

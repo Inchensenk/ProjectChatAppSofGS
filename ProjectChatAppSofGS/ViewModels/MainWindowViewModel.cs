@@ -36,6 +36,8 @@ namespace Client.ViewModels
         /// Комманда разворачивает окно на весь экран
         /// </summary>
         public ICommand MaximizingWindowCommand { get; set; }
+
+        public ICommand DragWindowCommand { get; set; }
         public MainWindowViewModel(NavigationStore navigationStore)
         {
             _navigationStore = navigationStore;
@@ -44,6 +46,7 @@ namespace Client.ViewModels
             CloseWindowCommand = new CloseWindowCommand();
             MinimizingWindowCommand = new MinimizingWindowCommand();
             MaximizingWindowCommand = new MaximizingWindowCommand();
+            DragWindowCommand=new BorderMouseDownCommand();
         }
 
        

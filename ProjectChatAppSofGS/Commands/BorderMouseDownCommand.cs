@@ -8,19 +8,22 @@ using System.Windows.Input;
 
 namespace Client.Commands
 {
-    public class CloseWindowCommand : BaseCommand
+    class BorderMouseDownCommand : BaseCommand
     {
         public override bool CanExecute(object parameter)
         {
             return true;
         }
 
-        public override void Execute(object parameter)
+        public override void Execute(object parameter, MouseButtonEventArgs e)
         {
-            Application.Current.Shutdown();
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                ((Window)parameter).DragMove();
+            }
         }
 
-        public override void Execute(object parameter, MouseButtonEventArgs e)
+        public override void Execute(object? parameter)
         {
             throw new NotImplementedException();
         }

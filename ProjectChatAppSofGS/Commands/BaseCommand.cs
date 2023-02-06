@@ -13,7 +13,8 @@ namespace Client.Commands
     public abstract class BaseCommand : ICommand
     {
         public abstract bool CanExecute(object parameter);
-        public abstract void Execute(object parameter);
+        public abstract void Execute(object? parameter);
+        public abstract void Execute(object parameter, MouseButtonEventArgs e);
 
 
         public event EventHandler? CanExecuteChanged;
@@ -22,6 +23,8 @@ namespace Client.Commands
         {
             CanExecuteChanged?.Invoke(this, EventArgs.Empty);
         }
+
+       
 
     }
 }
