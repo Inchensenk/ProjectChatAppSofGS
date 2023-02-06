@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Client.Views
 {
     /// <summary>
-    /// Логика взаимодействия для AuthorizationWindowView.xaml
+    /// Логика взаимодействия для AuthorizationUserControlView.xaml
     /// </summary>
-    public partial class AuthorizationWindowView : Window
+    public partial class AuthorizationUserControlView : UserControl
     {
-        public AuthorizationWindowView()
+        public AuthorizationUserControlView()
         {
             InitializeComponent();
         }

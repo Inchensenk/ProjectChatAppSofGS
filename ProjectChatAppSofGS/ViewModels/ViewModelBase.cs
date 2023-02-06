@@ -21,5 +21,7 @@ namespace Client.ViewModels
             то мы вызовем его с отправителем и некоторые аргументы события изменения свойства*/
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        public virtual void Dispose() { }
     }
 }

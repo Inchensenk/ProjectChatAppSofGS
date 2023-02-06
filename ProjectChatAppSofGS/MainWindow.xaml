@@ -15,23 +15,23 @@
         <!--Управление контентом, который будет отоброжать главная вью модель-->
         <ContentControl Content="{Binding CurrentViewModel}"/>
         
-        <views:AuthorizationWindowView DataContext="{Binding CurrentViewModel}"/>
+        <views:AuthorizationUserControlView DataContext="{Binding CurrentViewModel}"/>
 
         <Grid.Resources>
             
             <!--Сопоставление RegistrationWindowViewModel с RegistrationWindowView-->
-            <DataTemplate DataType="{x:Type vms:RegistrationWindowViewModel}">
-                <views:RegistrationWindowView/>
+            <DataTemplate DataType="{x:Type vms:RegistrationUserControlViewModel}">
+                <views:RegistrationUserControlView/>
             </DataTemplate>
 
             <!--Сопоставление AuthorizationWindowViewModel с AuthorizationWindowView-->
-            <DataTemplate DataType="{x:Type vms:AuthorizationWindowViewModel}">
-                <views:AuthorizationWindowView/>
+            <DataTemplate DataType="{x:Type vms:AuthorizationUserControlViewModel}">
+                <views:AuthorizationUserControlView/>
             </DataTemplate>
 
             <!--Сопоставление ChatsWindowViewModel с ChatsWindowView-->
-            <DataTemplate DataType="{x:Type vms:ChatsWindowViewModel}">
-                <views:ChatsWindowView/>
+            <DataTemplate DataType="{x:Type vms:ChatsUserControlViewModel}">
+                <views:ChatsUserControlView/>
             </DataTemplate>
 
         </Grid.Resources>

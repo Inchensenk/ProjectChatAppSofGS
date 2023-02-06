@@ -11,7 +11,7 @@ namespace Client.DbContexts
 {
     public class ApplicationDbContext : DbContext
     {
-        private const string CONNECTION_STRING = "@Data Source=PIXEL;Database=ChatAppSofDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite; MultiSubnetFailover=False";
+        private const string CONNECTION_STRING = @"Server=s-dev-01;Database=ChatAppSofDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite; MultiSubnetFailover=False";
         public ApplicationDbContext(DbContextOptions options) : base(options)
         {
 

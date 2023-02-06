@@ -3,14 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Input;
 
 namespace Client.ViewModels
 {
-    public class AuthorizationWindowViewModel : ViewModelBase
+    class AuthorizationUserControlViewModel : ViewModelBase
     {
-        public string Name => "Gevork";
-
-        
     }
 }

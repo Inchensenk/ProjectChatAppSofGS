@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Client.Views
 {
     /// <summary>
-    /// Логика взаимодействия для RegistrationWindowView.xaml
+    /// Логика взаимодействия для ChatsUserControlView.xaml
     /// </summary>
-    public partial class RegistrationWindowView : Window
+    public partial class ChatsUserControlView : UserControl
     {
-        public RegistrationWindowView()
+        public ChatsUserControlView()
         {
             InitializeComponent();
         }

@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace Client.ViewModels
 {
-    public class RegistrationWindowViewModel : ViewModelBase
+    class ChatsUserControlViewModel : ViewModelBase
     {
-
     }
 }
