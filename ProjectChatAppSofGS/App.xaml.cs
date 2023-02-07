@@ -1,14 +1,10 @@
 ﻿using Client.DbContexts;
 using Client.Stores;
 using Client.ViewModels;
-using Client.Views;
+using FluentAssertions.Common;
+using Microsoft.AspNet.SignalR.Hosting;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.Extensions.Hosting;
 using System.Windows;
 
 namespace ProjectChatAppSofGS
@@ -23,10 +19,16 @@ namespace ProjectChatAppSofGS
         /// </summary>
         private const string CONNECTION_STRING = @"Server=s-dev-01;Database=ChatAppSofDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite; MultiSubnetFailover=False";
 
+        private readonly IHost _host;
+
         private readonly NavigationStore _navigationStore;
 
         public App()
         {
+            _host = Host.CreateDefaultBuilder()
+                .AddViewModels()
+                .ConfigureServices((HostContext, Services)
+
             _navigationStore = new NavigationStore();
         }
 
@@ -43,7 +45,7 @@ namespace ProjectChatAppSofGS
 
             _navigationStore.CurrentViewModel = CreateRegistrationUserControlViewModel();
 
-            //Глаавное окно с контекстом данных
+            //Главное окно с контекстом данных
             MainWindow = new MainWindow()
             {
                 DataContext = new MainWindowViewModel(_navigationStore)

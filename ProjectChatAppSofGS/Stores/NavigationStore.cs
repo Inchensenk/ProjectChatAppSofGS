@@ -15,7 +15,7 @@ namespace Client.Stores
         /// <summary>
         /// Текущая Вью модель для приложения
         /// </summary>
-        private ViewModelBase _currentViewModel = null!;
+        private ViewModelBase _currentViewModel;
 
         public ViewModelBase CurrentViewModel
         {
@@ -31,7 +31,7 @@ namespace Client.Stores
         /// <summary>
         /// Событие изменения главного окна
         /// </summary>
-        public event Action CurrentViewModelChanged = null!;
+        public event Action CurrentViewModelChanged;
 
         /// <summary>
         /// Метод вызывающий текущую VM

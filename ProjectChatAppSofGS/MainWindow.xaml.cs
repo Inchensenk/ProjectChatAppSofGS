@@ -25,5 +25,12 @@ namespace ProjectChatAppSofGS
             InitializeComponent();
         }
 
+        private void OnBorderMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
+        }
     }
 }

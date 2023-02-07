@@ -8,5 +8,11 @@ namespace Client.ViewModels
 {
     class AuthorizationUserControlViewModel : ViewModelBase
     {
+        public static AuthorizationUserControlViewModel LoadViewModel()
+        {
+            AuthorizationUserControlViewModel viewModel= new AuthorizationUserControlViewModel();
+
+            
+        }
     }
 }
