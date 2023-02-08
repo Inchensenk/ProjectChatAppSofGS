@@ -1,5 +1,8 @@
 ﻿using Client.Commands;
-using Client.Stores;
+using MVVMEssentials.Commands;
+using MVVMEssentials.Services;
+using MVVMEssentials.Stores;
+using MVVMEssentials.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,50 +15,38 @@ namespace Client.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
-        /// <summary>
-        /// хранилище навигации
-        /// </summary>
-        private readonly NavigationStore _navigationStore;
+  
+        ///// <summary>
+        ///// Команда закрытия окна по нажатию на кнопку
+        ///// </summary>
+        //public ICommand CloseWindowCommand { get; set; }
 
-        /// <summary>
-        /// Текущая вьюмодель для приложения
-        /// </summary>
-        public ViewModelBase CurrentViewModel => _navigationStore.CurrentViewModel;
+        ///// <summary>
+        ///// Комманда сворачивания окна
+        ///// </summary>
+        //public ICommand MinimizingWindowCommand { get; set; }
 
-        /// <summary>
-        /// Команда закрытия окна по нажатию на кнопку
-        /// </summary>
-        public ICommand CloseWindowCommand { get; set; }
+        ///// <summary>
+        ///// Комманда разворачивает окно на весь экран
+        ///// </summary>
+        //public ICommand MaximizingWindowCommand { get; set; }
 
-        /// <summary>
-        /// Комманда сворачивания окна
-        /// </summary>
-        public ICommand MinimizingWindowCommand { get; set; }
+        ////public ICommand DragWindowCommand { get; set; }
 
-        /// <summary>
-        /// Комманда разворачивает окно на весь экран
-        /// </summary>
-        public ICommand MaximizingWindowCommand { get; set; }
-
-        //public ICommand DragWindowCommand { get; set; }
-        public MainWindowViewModel(NavigationStore navigationStore)
+        public ICommand ChatsNavigationCommand { get; set; }
+        public MainWindowViewModel(INavigationService chatsNavigationService)
         {
-            _navigationStore = navigationStore;
-            _navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
+            //CloseWindowCommand = new CloseWindowCommand();
+            //MinimizingWindowCommand = new MinimizingWindowCommand();
+            //MaximizingWindowCommand = new MaximizingWindowCommand();
+            ////DragWindowCommand=new BorderMouseDownCommand();
 
-            CloseWindowCommand = new CloseWindowCommand();
-            MinimizingWindowCommand = new MinimizingWindowCommand();
-            MaximizingWindowCommand = new MaximizingWindowCommand();
-            //DragWindowCommand=new BorderMouseDownCommand();
+            ChatsNavigationCommand = new NavigateCommand(chatsNavigationService);
+
         }
 
-       
-       
-
-        private void OnCurrentViewModelChanged()
-        {
-            OnPropertyChanged(nameof(CurrentViewModel));
-        }
+        
+ 
 
     }
 }

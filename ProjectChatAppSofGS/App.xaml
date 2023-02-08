@@ -1,8 +1,9 @@
 ﻿<Application x:Class="ProjectChatAppSofGS.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:ProjectChatAppSofGS"
-             StartupUri="MainWindow.xaml">
+             xmlns:local="clr-namespace:ProjectChatAppSofGS">
+            <!--удаляем StartupUri="MainWindow.xaml" так как мы переопределили вызов модели представления при запуске-->
+    
     <Application.Resources>
         
         <ResourceDictionary>

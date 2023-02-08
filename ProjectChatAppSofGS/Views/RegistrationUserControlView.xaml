@@ -61,7 +61,8 @@
 
                 <Button HorizontalAlignment="Center"
                         Content="Авторизация"
-                        Width="490"/>
+                        Width="490"
+                        />
 
             </StackPanel>
 

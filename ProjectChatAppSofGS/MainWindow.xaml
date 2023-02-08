@@ -3,23 +3,24 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        
         xmlns:vms="clr-namespace:Client.ViewModels" 
         xmlns:views="clr-namespace:Client.Views"
-        d:DataContext="{d:DesignInstance Type = vms:MainWindowViewModel}"
+        
+        d:DataContext="{d:DesignInstance Type = vms:ChatsUserControlViewModel}"
         mc:Ignorable="d"
         Title="MainWindow" 
         Height="450" 
         Width="800"
         Background="#363933"
-        WindowStyle="None"
-        AllowsTransparency="False"
-        ResizeMode="CanResizeWithGrip" Cursor=""
+        WindowStyle="ThreeDBorderWindow"
+        ResizeMode="CanResizeWithGrip"
         >
     <ScrollViewer VerticalScrollBarVisibility="Auto">
     <Grid Background="Transparent">
         
-        <Grid.RowDefinitions>
-            <!--Строка заголовка-->
+        <!--<Grid.RowDefinitions>
+            --><!--Строка заголовка--><!--
             <RowDefinition Height="22"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
@@ -74,14 +75,13 @@
                 </StackPanel>
 
             </Grid>
-        </Border>
+        </Border>-->
         
-        <Grid Grid.Row="1">
-        <!--Управление контентом, который будет отоброжать главная вью модель-->
-        <ContentControl Content="{Binding CurrentViewModel}"/>
-        
-        <views:AuthorizationUserControlView DataContext="{Binding CurrentViewModel}"/>
+        <Grid>
 
+        
+        <!--<views:AuthorizationUserControlView DataContext="{Binding CurrentViewModel}"/>-->
+              
         <Grid.Resources>
             
             <!--Сопоставление RegistrationWindowViewModel с RegistrationWindowView-->
@@ -100,8 +100,11 @@
             </DataTemplate>
 
         </Grid.Resources>
+            
+            
         </Grid>
-        
-    </Grid>
+            <!--Управление контентом, который будет отоброжать главная вью модель-->
+            <ContentControl Content="{Binding CurrentViewModel}"/>
+        </Grid>
     </ScrollViewer>
 </Window>

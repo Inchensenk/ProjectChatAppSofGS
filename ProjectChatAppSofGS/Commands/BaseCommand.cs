@@ -23,8 +23,5 @@ namespace Client.Commands
         {
             CanExecuteChanged?.Invoke(this, EventArgs.Empty);
         }
-
-       
-
     }
 }

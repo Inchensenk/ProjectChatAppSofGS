@@ -1,11 +1,16 @@
 ﻿using Client.DbContexts;
-using Client.Stores;
 using Client.ViewModels;
 using FluentAssertions.Common;
-using Microsoft.AspNet.SignalR.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Configuration;
 using System.Windows;
+using MVVMEssentials.Stores;
+using MVVMEssentials.Services;
+using System;
+using MVVMEssentials.ViewModels;
+using System.Windows.Navigation;
 
 namespace ProjectChatAppSofGS
 {
@@ -14,48 +19,51 @@ namespace ProjectChatAppSofGS
     /// </summary>
     public partial class App : Application
     {
-        /// <summary>
-        /// Строка подключения
-        /// </summary>
-        private const string CONNECTION_STRING = @"Server=s-dev-01;Database=ChatAppSofDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite; MultiSubnetFailover=False";
-
-        private readonly IHost _host;
-
         private readonly NavigationStore _navigationStore;
+        private readonly ModalNavigationStore _modalNavigationStore;
 
         public App()
         {
-            _host = Host.CreateDefaultBuilder()
-                .AddViewModels()
-                .ConfigureServices((HostContext, Services)
-
             _navigationStore = new NavigationStore();
+            _modalNavigationStore = new ModalNavigationStore();
         }
 
         protected override void OnStartup(StartupEventArgs e)
         {
-            DbContextOptions options= new DbContextOptionsBuilder().UseSqlServer(CONNECTION_STRING).Options;
+            INavigationService navigationService = CreateAuthorizationNavigationService();
+            navigationService.Navigate();
 
-            using (ApplicationDbContext dbContext = new ApplicationDbContext(options))
-            {
-                dbContext.Database.EnsureCreated();
-                var canConnect = dbContext.Database.CanConnect();
-                dbContext.Database.Migrate();
-            }
-
-            _navigationStore.CurrentViewModel = CreateRegistrationUserControlViewModel();
 
             //Главное окно с контекстом данных
             MainWindow = new MainWindow()
             {
-                DataContext = new MainWindowViewModel(_navigationStore)
+               
+                DataContext = new MainViewModel(_navigationStore, _modalNavigationStore)
             };
 
             MainWindow.Show();
             base.OnStartup(e);
         }
 
-        private RegistrationUserControlViewModel CreateRegistrationUserControlViewModel()=> new RegistrationUserControlViewModel();
-       
+        private INavigationService CreateAuthorizationNavigationService()
+        {
+            return new NavigationService<AuthorizationUserControlViewModel>(_navigationStore, CreateAuthorizationViewModel);
+        }
+
+        private AuthorizationUserControlViewModel CreateAuthorizationViewModel()
+        {
+            return new AuthorizationUserControlViewModel(CreateChatsNavigationServise());
+        }
+
+        private INavigationService CreateChatsNavigationServise()
+        {
+            return new NavigationService<AuthorizationUserControlViewModel>(_navigationStore, CreateChatsViewModel);
+        }
+
+        private AuthorizationUserControlViewModel CreateChatsViewModel()
+        {
+            return new AuthorizationUserControlViewModel(CreateAuthorizationNavigationService());
+        }
     }
 }
+
