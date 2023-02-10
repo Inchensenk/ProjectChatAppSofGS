@@ -15,6 +15,8 @@
         Background="#363933"
         WindowStyle="None"
         AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
+        FontFamily="{DynamicResource MaterialDesignFont}"
         >
 
     <Grid Background="Transparent">
@@ -34,51 +36,53 @@
                   HorizontalAlignment="Stretch">
 
                 <Label Content="PIXEL CHAT"
-                           Foreground="Gray"
-                           FontWeight="Bold"
-                           HorizontalAlignment="Left" 
-                           FontSize="12"
-                           Padding="10,1,1,1"/>
+                       Foreground="Gray"
+                       FontWeight="Bold"
+                       HorizontalAlignment="Left" 
+                       FontSize="12"
+                       Padding="10,1,1,1"/>
 
                 <StackPanel HorizontalAlignment="Right"
                             Orientation="Horizontal">
 
                     <Button Width="20"
                             Height="20"
-                            Content="—"
+                            Content="_"
                             Background="Transparent"
                             BorderThickness="0"
                             Foreground="Gray"
                             FontWeight="Bold"
                             Margin="0,0,0,3"
                             Command="{Binding MinimizingWindowCommand}"
-                            Style="{StaticResource MaterialDesignToolForegroundButton}"/>
+                            Style="{StaticResource MaterialDesignToolForegroundButton}"
+                            Padding="0"/>
 
                     <Button Width="20"
-                                Height="20"
-                                Content="&#x25A2;"
-                                Background="Transparent"
-                                BorderThickness="0"
-                                Foreground="Gray"
-                                FontWeight="Bold" Cursor="Hand"
-                                Command="{Binding MaximizingWindowCommand}"
-                                Style="{StaticResource MaterialDesignToolForegroundButton}"
-                                Padding="0">
+                            Height="20"
+                            Content="☐"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Foreground="Gray"
+                            FontWeight="Bold" Cursor="Hand"
+                            Command="{Binding MaximizingWindowCommand}"
+                            Style="{StaticResource MaterialDesignToolForegroundButton}"
+                            Padding="0">
 
 
                     </Button>
 
                     <Button Width="20"
-                                Height="20"
-                                Content="✕"
-                                Background="Transparent"
-                                BorderThickness="0"
-                                Foreground="Gray"
-                                FontWeight="Bold"
-                                FontSize="10"
-                                Command="{Binding CloseWindowCommand}" 
-                                Cursor="Hand"
-                                Style="{StaticResource MaterialDesignToolForegroundButton}">
+                            Height="20"
+                            Content="✕"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Foreground="Gray"
+                            FontWeight="Bold"
+                            FontSize="10"
+                            Command="{Binding CloseWindowCommand}" 
+                            Cursor="Hand"
+                            Style="{StaticResource MaterialDesignToolForegroundButton}"
+                            Padding="0">
                     </Button>
 
                 </StackPanel>
@@ -86,47 +90,7 @@
             </Grid>
         </Border>
 
-        <!--<Grid>
-
-
-                <views:AuthorizationUserControlView DataContext="{Binding CurrentViewModel}"/>
-
-                <Grid.Resources>
-            
-            -->
-        <!--Сопоставление RegistrationWindowViewModel с RegistrationWindowView-->
-        <!--
-            <DataTemplate DataType="{x:Type vms:RegistrationUserControlViewModel}">
-                <views:RegistrationUserControlView/>
-            </DataTemplate>
-
-            -->
-        <!--Сопоставление AuthorizationWindowViewModel с AuthorizationWindowView-->
-        <!--
-            <DataTemplate DataType="{x:Type vms:AuthorizationUserControlViewModel}">
-                <views:AuthorizationUserControlView/>
-            </DataTemplate>
-
-            -->
-        <!--Сопоставление ChatsWindowViewModel с ChatsWindowView-->
-        <!--
-            <DataTemplate DataType="{x:Type vms:ChatsUserControlViewModel}">
-                <views:ChatsUserControlView/>
-            </DataTemplate>
-
-        </Grid.Resources>
-            
-            
-        </Grid>
-
-
-
-
-            -->
-        <!--Управление контентом, который будет отоброжать главная вью модель-->
-        <!--
-            <ContentControl Content="{Binding CurrentViewModel}"/>-->
-
+        <!--Настройка отоброжения моделей представления в главном окне-->
         <Grid Grid.Row="1">
             <!--Отображение текущей вью модели. CurrentViewModel Текущее свойство в основной модели просмотра, которое определяет представление для приложения-->
             <ContentControl Content="{Binding CurrentViewModel}">
@@ -147,5 +111,6 @@
                 </ContentControl.Resources>
             </ContentControl>
         </Grid>
+        
     </Grid>
 </Window>
