@@ -31,9 +31,13 @@ namespace Client.ViewModels
 
         public ICommand NavigateChatsCommand { get; }
 
+        public ICommand NavigateRegistrationCommand { get; }
+
         public AuthorizationUserControlViewModel(NavigationStore navigationStore)
         {
             NavigateChatsCommand = new NavigateCommand<ChatsUserControlViewModel>(navigationStore, () => new ChatsUserControlViewModel(navigationStore));
+
+            NavigateRegistrationCommand = new NavigateCommand<RegistrationUserControlViewModel>(navigationStore, () => new RegistrationUserControlViewModel(navigationStore));
         }
     }
 }

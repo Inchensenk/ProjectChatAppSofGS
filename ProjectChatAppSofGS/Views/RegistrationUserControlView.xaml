@@ -5,13 +5,16 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Client.Views"
              mc:Ignorable="d" 
-             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" d:DesignWidth="800" Height="626">
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:viewmodels="clr-namespace:Client.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:RegistrationUserControlViewModel}" d:DesignWidth="800" Height="626">
 
-    <Grid Background = "transparent" Margin="39,-98,-39,98">
+    <Grid Background = "transparent" Margin="11,12,-11,-12">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
         <Border MinWidth="750" 
-                Margin="15,0,15,0" 
+                Margin="9,34,21,0" 
                 Background= "Transparent"
-                VerticalAlignment="Center"
+                VerticalAlignment="Top"
                 Padding="30"
                 MaxWidth="550"
                 Height="554" Cursor="">
@@ -62,7 +65,7 @@
                 <Button HorizontalAlignment="Center"
                         Content="Авторизация"
                         Width="490"
-                        />
+                        Command="{Binding NavigateAuthorizationCommand}"/>
 
             </StackPanel>
 

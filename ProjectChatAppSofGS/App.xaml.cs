@@ -34,9 +34,6 @@ namespace ProjectChatAppSofGS
             MainWindow.Show();
             base.OnStartup(e);
         }
-
-
-       
     }
 }
 

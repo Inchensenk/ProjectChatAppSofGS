@@ -55,7 +55,8 @@
 
                 <Button HorizontalAlignment="Center"
                         Content="Регистрация"
-                        Width="490"/>
+                        Width="490"
+                        Command="{Binding NavigateRegistrationCommand}"/>
 
             </StackPanel>
         </Border>

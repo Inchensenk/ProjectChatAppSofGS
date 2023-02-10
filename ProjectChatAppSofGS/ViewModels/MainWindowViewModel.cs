@@ -13,23 +13,23 @@ namespace Client.ViewModels
     public class MainWindowViewModel : ViewModelBase
     {
 
-        ///// <summary>
-        ///// Команда закрытия окна по нажатию на кнопку
-        ///// </summary>
-        //public ICommand CloseWindowCommand { get; set; }
+        /// <summary>
+        /// Команда закрытия окна по нажатию на кнопку
+        /// </summary>
+        public ICommand CloseWindowCommand { get; set; }
 
-        ///// <summary>
-        ///// Комманда сворачивания окна
-        ///// </summary>
-        //public ICommand MinimizingWindowCommand { get; set; }
+        /// <summary>
+        /// Комманда сворачивания окна
+        /// </summary>
+        public ICommand MinimizingWindowCommand { get; set; }
 
-        ///// <summary>
-        ///// Комманда разворачивает окно на весь экран
-        ///// </summary>
-        //public ICommand MaximizingWindowCommand { get; set; }
+        /// <summary>
+        /// Комманда разворачивает окно на весь экран
+        /// </summary>
+        public ICommand MaximizingWindowCommand { get; set; }
 
         ////public ICommand DragWindowCommand { get; set; }
-        
+
         private readonly NavigationStore _navigationStore;
 
         /// <summary>
@@ -39,13 +39,15 @@ namespace Client.ViewModels
 
         public MainWindowViewModel(NavigationStore navigationStore)
         {
-            //CloseWindowCommand = new CloseWindowCommand();
-            //MinimizingWindowCommand = new MinimizingWindowCommand();
-            //MaximizingWindowCommand = new MaximizingWindowCommand();
+            CloseWindowCommand = new CloseWindowCommand();
+            MinimizingWindowCommand = new MinimizingWindowCommand();
+            MaximizingWindowCommand = new MaximizingWindowCommand();
             ////DragWindowCommand=new BorderMouseDownCommand();
         
             _navigationStore = navigationStore;
             _navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
+
+           
         }
 
 
@@ -53,6 +55,5 @@ namespace Client.ViewModels
         {
             OnPropertyChanged(nameof(CurrentViewModel));
         }
-
     }
 }
