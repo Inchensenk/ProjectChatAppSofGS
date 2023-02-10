@@ -64,7 +64,7 @@
 
                     <Button Width="20"
                             Height="20"
-                            Content="                           "
+                            Content=""
                             Background="Transparent"
                             BorderThickness="0"
                             Foreground="White"
@@ -77,24 +77,24 @@
             </Grid>
         </Border>-->
         
-        <Grid>
+        <!--<Grid>
 
-        
-        <!--<views:AuthorizationUserControlView DataContext="{Binding CurrentViewModel}"/>-->
-              
-        <Grid.Resources>
+
+                <views:AuthorizationUserControlView DataContext="{Binding CurrentViewModel}"/>
+
+                <Grid.Resources>
             
-            <!--Сопоставление RegistrationWindowViewModel с RegistrationWindowView-->
+            --><!--Сопоставление RegistrationWindowViewModel с RegistrationWindowView--><!--
             <DataTemplate DataType="{x:Type vms:RegistrationUserControlViewModel}">
                 <views:RegistrationUserControlView/>
             </DataTemplate>
 
-            <!--Сопоставление AuthorizationWindowViewModel с AuthorizationWindowView-->
+            --><!--Сопоставление AuthorizationWindowViewModel с AuthorizationWindowView--><!--
             <DataTemplate DataType="{x:Type vms:AuthorizationUserControlViewModel}">
                 <views:AuthorizationUserControlView/>
             </DataTemplate>
 
-            <!--Сопоставление ChatsWindowViewModel с ChatsWindowView-->
+            --><!--Сопоставление ChatsWindowViewModel с ChatsWindowView--><!--
             <DataTemplate DataType="{x:Type vms:ChatsUserControlViewModel}">
                 <views:ChatsUserControlView/>
             </DataTemplate>
@@ -103,8 +103,31 @@
             
             
         </Grid>
-            <!--Управление контентом, который будет отоброжать главная вью модель-->
-            <ContentControl Content="{Binding CurrentViewModel}"/>
+
+
+
+
+            --><!--Управление контентом, который будет отоброжать главная вью модель--><!--
+            <ContentControl Content="{Binding CurrentViewModel}"/>-->
+
+            <!--Отображение текущей вью модели. CurrentViewModel Текущее свойство в основной модели просмотра, которое определяет представление для приложения-->
+            <ContentControl Content="{Binding CurrentViewModel}">
+                <ContentControl.Resources>
+                    
+                    <DataTemplate DataType="{x:Type vms:AuthorizationUserControlViewModel}">
+                        <views:AuthorizationUserControlView/>
+                    </DataTemplate>
+
+                    <DataTemplate DataType="{x:Type vms:ChatsUserControlViewModel}">
+                        <views:ChatsUserControlView/>
+                    </DataTemplate>
+
+                    <DataTemplate DataType="{x:Type vms:RegistrationUserControlViewModel}">
+                        <views:RegistrationUserControlView/>
+                    </DataTemplate>
+
+                </ContentControl.Resources>
+            </ContentControl>
         </Grid>
     </ScrollViewer>
 </Window>

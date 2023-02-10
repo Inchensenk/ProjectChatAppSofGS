@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Client.Views"
+             xmlns:local="clr-namespace:Client.Views" xmlns:viewmodels="clr-namespace:Client.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:ChatsUserControlViewModel}"
+             
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
@@ -57,7 +58,8 @@
                            Margin=" 0,-8,0,-5"/>
 
                 </StackPanel>
-
+                <Button Content="Выход"
+                        Command="{Binding NavigateAuthorizationCommand}"/>
             </StackPanel>
 
         </Grid>

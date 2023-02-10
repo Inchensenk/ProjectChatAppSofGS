@@ -1,6 +1,4 @@
-﻿using MVVMEssentials.Commands;
-using MVVMEssentials.Services;
-using MVVMEssentials.ViewModels;
+﻿using Client.Commands;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +10,7 @@ namespace Client.ViewModels
 {
     class RegistrationUserControlViewModel : ViewModelBase
     {
-        /// <summary>
+        /*/// <summary>
         /// Команда для перехода в окно авторизации
         /// </summary>
         public ICommand NavigateAuthorizationCommand { get; }
@@ -20,6 +18,6 @@ namespace Client.ViewModels
         public RegistrationUserControlViewModel(INavigationService authorizationNavigationService)
         {
             NavigateAuthorizationCommand = new NavigateCommand(authorizationNavigationService);
-        }
+        }*/
     }
 }

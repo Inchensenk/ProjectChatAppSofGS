@@ -1,6 +1,5 @@
-﻿using MVVMEssentials.Commands;
-using MVVMEssentials.Services;
-using MVVMEssentials.ViewModels;
+﻿using Client.Commands;
+using Client.Stores;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +11,7 @@ namespace Client.ViewModels
 {
     public class AuthorizationUserControlViewModel : ViewModelBase
     {
+        /*
         /// <summary>
         /// Команда для перемещения в окно навигации
         /// </summary>
@@ -27,5 +27,13 @@ namespace Client.ViewModels
         //{
         //    NavigateRegistrationCommand = new
         //}
+        */
+
+        public ICommand NavigateChatsCommand { get; }
+
+        public AuthorizationUserControlViewModel(NavigationStore navigationStore)
+        {
+            NavigateChatsCommand = new NavigateCommand<ChatsUserControlViewModel>(navigationStore, () => new ChatsUserControlViewModel(navigationStore));
+        }
     }
 }

@@ -1,8 +1,5 @@
 ﻿using Client.Commands;
-using MVVMEssentials.Commands;
-using MVVMEssentials.Services;
-using MVVMEssentials.Stores;
-using MVVMEssentials.ViewModels;
+using Client.Stores;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +12,7 @@ namespace Client.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
-  
+
         ///// <summary>
         ///// Команда закрытия окна по нажатию на кнопку
         ///// </summary>
@@ -32,21 +29,30 @@ namespace Client.ViewModels
         //public ICommand MaximizingWindowCommand { get; set; }
 
         ////public ICommand DragWindowCommand { get; set; }
+        
+        private readonly NavigationStore _navigationStore;
 
-        public ICommand ChatsNavigationCommand { get; set; }
-        public MainWindowViewModel(INavigationService chatsNavigationService)
+        /// <summary>
+        /// Получаем текущую модель представления из хранилища навигации
+        /// </summary>
+        public ViewModelBase CurrentViewModel => _navigationStore.CurrentViewModel;/*Текущее свойство вью модел в основной модели просмотра, которое определяет представление для приложения*/
+
+        public MainWindowViewModel(NavigationStore navigationStore)
         {
             //CloseWindowCommand = new CloseWindowCommand();
             //MinimizingWindowCommand = new MinimizingWindowCommand();
             //MaximizingWindowCommand = new MaximizingWindowCommand();
             ////DragWindowCommand=new BorderMouseDownCommand();
-
-            ChatsNavigationCommand = new NavigateCommand(chatsNavigationService);
-
+        
+            _navigationStore = navigationStore;
+            _navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
         }
 
-        
- 
+
+        private void OnCurrentViewModelChanged()
+        {
+            OnPropertyChanged(nameof(CurrentViewModel));
+        }
 
     }
 }
