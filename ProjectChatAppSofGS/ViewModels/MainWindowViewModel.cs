@@ -28,7 +28,7 @@ namespace Client.ViewModels
         /// </summary>
         public ICommand MaximizingWindowCommand { get; set; }
 
-        ////public ICommand DragWindowCommand { get; set; }
+        public ICommand DragWindowCommand { get; set; }
 
         private readonly NavigationStore _navigationStore;
 
@@ -42,7 +42,7 @@ namespace Client.ViewModels
             CloseWindowCommand = new CloseWindowCommand();
             MinimizingWindowCommand = new MinimizingWindowCommand();
             MaximizingWindowCommand = new MaximizingWindowCommand();
-            ////DragWindowCommand=new BorderMouseDownCommand();
+            DragWindowCommand=new BorderMouseDownCommand();
         
             _navigationStore = navigationStore;
             _navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;

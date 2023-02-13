@@ -9,9 +9,15 @@ namespace Server.EFCore.Entities
     public class Authorization
     {
         public int Id { get; set; }
-        public string Login { get; set; } = null!;
-        public string Password { get; set; } = null!;
+        public string Login { get; set; }
+        public string Password { get; set; }
         public int UserId { get; set; }
         public User? User { get; set; }
+
+        public Authorization()
+        {
+            Login= null!;
+            Password= null!;
+        }
     }
 }

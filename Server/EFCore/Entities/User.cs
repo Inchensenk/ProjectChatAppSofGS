@@ -10,16 +10,20 @@ namespace Server.EFCore.Entities
     public class User
     {
         public int Id { get; set; }
-        public string NickName { get; set; } = null!;
-        public string PhoneNumber { get; set; } = null!;
-        public string FirstName { get; set; } = null!;
-        public string LastName { get; set; } = null!;
+        public string NickName { get; set; }
+        public string PhoneNumber { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         public Authorization? Authorization { get; set; }
         public List<Conversation> Conversations { get; set; }
 
         public User()
         {
             Conversations = new List<Conversation>();
+            NickName = null!;
+            PhoneNumber = null!;
+            FirstName = null!;
+            LastName = null!;
         }
     }
 }

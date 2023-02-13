@@ -57,9 +57,12 @@ namespace Server.EFCore.DatabaseServices
             optionsBuilder.UseSqlServer(CONNECTION_STRING);
         }
 
+
+
         /// <summary>
         /// Применение конфигураций сущностей EFCore
         /// </summary>
+        /// <param name="modelBuilder"></param>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new UserConfiguration());

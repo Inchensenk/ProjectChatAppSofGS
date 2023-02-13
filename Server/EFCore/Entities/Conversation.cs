@@ -9,7 +9,7 @@ namespace Server.EFCore.Entities
     public class Conversation
     {
         public int Id { get; set; }
-        public string ConversationName { get; set; } = null!;
+        public string ConversationName { get; set; }
         public int UserId { get; set; }
         public User? User { get; set; }
         public List<Message> Messages { get; set; }
@@ -17,6 +17,7 @@ namespace Server.EFCore.Entities
         public Conversation()
         {
             Messages = new List<Message>();
+            ConversationName= null!;
         }
     }
 }

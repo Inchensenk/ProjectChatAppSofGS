@@ -29,12 +29,7 @@ namespace Server.Net.IO
             _ms.WriteByte(opCode);
         }
 
-        /*public void WriteMessage(string msg)
-        {
-            var msgLenght = msg.Length;
-            _ms.Write(BitConverter.GetBytes(msgLenght));
-            _ms.Write(Encoding.ASCII.GetBytes(msg));
-        }*/
+
         public void WriteMessage(string msg)
         {
             var unicodeMessage = Encoding.UTF8.GetBytes(msg);

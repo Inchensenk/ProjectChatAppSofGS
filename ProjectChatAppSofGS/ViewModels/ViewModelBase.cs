@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace Client.ViewModels
 {
+    /// <summary>
+    /// Базовый класс, реализующий интерфейсы: INotifyPropertyChanged и IDisposable
+    /// </summary>
     public class ViewModelBase : INotifyPropertyChanged, IDisposable
     {
         public event PropertyChangedEventHandler PropertyChanged;
