@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Client.Entities
+namespace Server.EFCore.Entities
 {
     public class User
     {

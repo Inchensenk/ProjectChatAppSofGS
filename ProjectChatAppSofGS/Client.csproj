@@ -9,13 +9,9 @@
 
   <ItemGroup>
     <Compile Remove="DTOs\**" />
-    <Compile Remove="Models\**" />
     <EmbeddedResource Remove="DTOs\**" />
-    <EmbeddedResource Remove="Models\**" />
     <None Remove="DTOs\**" />
-    <None Remove="Models\**" />
     <Page Remove="DTOs\**" />
-    <Page Remove="Models\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -26,6 +22,10 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
   </ItemGroup>
 
 </Project>

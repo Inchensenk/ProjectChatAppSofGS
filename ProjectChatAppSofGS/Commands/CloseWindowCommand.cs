@@ -10,10 +10,7 @@ namespace Client.Commands
 {
     public class CloseWindowCommand : BaseCommand
     {
-        public override bool CanExecute(object parameter)
-        {
-            return true;
-        }
+        public override bool CanExecute(object parameter) => true;
 
         public override void Execute(object parameter)
         {
