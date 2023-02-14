@@ -14,7 +14,6 @@ namespace Client.Commands
     {
         public abstract bool CanExecute(object parameter);
         public abstract void Execute(object? parameter);
-        public abstract void Execute(object parameter, MouseButtonEventArgs e);
 
 
         public event EventHandler? CanExecuteChanged;

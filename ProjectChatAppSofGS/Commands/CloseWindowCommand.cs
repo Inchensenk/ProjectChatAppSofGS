@@ -17,9 +17,5 @@ namespace Client.Commands
             Application.Current.Shutdown();
         }
 
-        public override void Execute(object parameter, MouseButtonEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

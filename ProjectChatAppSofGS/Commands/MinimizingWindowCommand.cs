@@ -19,10 +19,5 @@ namespace Client.Commands
         {
             Application.Current.MainWindow.WindowState = WindowState.Minimized;
         }
-
-        public override void Execute(object parameter, MouseButtonEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

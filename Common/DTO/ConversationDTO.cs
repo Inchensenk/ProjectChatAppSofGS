@@ -13,17 +13,30 @@ namespace Common.DTO
     [ProtoContract]
     public class ConversationDTO
     {
+        /// <summary>
+        /// Идентификатор
+        /// </summary>
         [ProtoMember(1)]
         public int Id { get; set; }
 
+        /// <summary>
+        /// Имя диалога
+        /// </summary>
         [ProtoMember(2)]
         public string ConversationName { get; set; }
 
+        /// <summary>
+        /// Конструктор без параметров
+        /// </summary>
         public ConversationDTO()
         {
             ConversationName = null!;
         }
 
+        /// <summary>
+        /// Переопределение метода ToString
+        /// </summary>
+        /// <returns>строка отоброжающая поля класса</returns>
         public override string ToString() => $"Id: {Id} || ConversationName: {ConversationName} ";
     }
 }

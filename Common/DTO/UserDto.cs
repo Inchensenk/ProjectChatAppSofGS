@@ -14,7 +14,7 @@ namespace Common.DTO
     public class UserDto
     {
         /// <summary>
-        /// Id
+        /// Идентификатор
         /// </summary>
         [ProtoMember(1)]/*Атрибут - для сереализации/десереализации, задает интовый идентификатор для свойства*/
         public int Id { get; init; }
@@ -58,7 +58,7 @@ namespace Common.DTO
         /// <summary>
         /// Переопределение метода ToString
         /// </summary>
-        /// <returns></returns>
+        /// <returns>строка отоброжающая поля класса</returns>
         public override string ToString() => $"Id: {Id} || NickName: {NickName} || PhoneNumber: {PhoneNumber} || FirstName: {FirstName} || LastName: {LastName}";
     }
 }
