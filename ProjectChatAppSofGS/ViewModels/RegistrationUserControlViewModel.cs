@@ -12,10 +12,14 @@ namespace Client.ViewModels
     class RegistrationUserControlViewModel : ViewModelBase
     {
         /// <summary>
-        /// Команда для перехода в окно авторизации
+        /// Команда для отоброжения в главной модели представления модели представления авторизации
         /// </summary>
         public ICommand NavigateAuthorizationCommand { get; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="navigationStore"></param>
         public RegistrationUserControlViewModel(NavigationStore navigationStore)
         {
             NavigateAuthorizationCommand = new NavigateCommand<AuthorizationUserControlViewModel>(navigationStore, () => new AuthorizationUserControlViewModel(navigationStore));

@@ -28,7 +28,7 @@ namespace Client.ViewModels
         /// </summary>
         public ICommand MaximizingWindowCommand { get; set; }
 
-        public ICommand DragWindowCommand { get; set; }
+       // public ICommand DragWindowCommand { get; set; }
 
         private readonly NavigationStore _navigationStore;
 
@@ -37,17 +37,19 @@ namespace Client.ViewModels
         /// </summary>
         public ViewModelBase CurrentViewModel => _navigationStore.CurrentViewModel;/*Текущее свойство вью модел в основной модели просмотра, которое определяет представление для приложения*/
 
+        /// <summary>
+        /// Конструктор с параметром
+        /// </summary>
+        /// <param name="navigationStore">NavigationStore хранит текущую модель представления</param>
         public MainWindowViewModel(NavigationStore navigationStore)
         {
             CloseWindowCommand = new CloseWindowCommand();
             MinimizingWindowCommand = new MinimizingWindowCommand();
             MaximizingWindowCommand = new MaximizingWindowCommand();
-            DragWindowCommand=new BorderMouseDownCommand();
+            //DragWindowCommand=new BorderMouseDownCommand();
         
             _navigationStore = navigationStore;
             _navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
-
-           
         }
 
 

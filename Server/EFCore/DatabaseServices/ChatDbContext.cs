@@ -11,6 +11,19 @@ namespace Server.EFCore.DatabaseServices
 {
     public class ChatDbContext : DbContext
     {
+
+        /// <summary>
+        /// Строка подключения
+        /// </summary>
+        private const string CONNECTION_STRING = @"Data Source=s-dev-01; 
+                                                 Database=ChatsDB; 
+                                                 Integrated Security=True;
+                                                 Connect Timeout=30;
+                                                 Encrypt=False;
+                                                 TrustServerCertificate=False;
+                                                 ApplicationIntent=ReadWrite;
+                                                 MultiSubnetFailover=False";
+
         /// <summary>
         /// Логгирование операций выполняемых в Entity Framework с выводом логгов в файл mylog.txt
         /// </summary>
@@ -36,17 +49,8 @@ namespace Server.EFCore.DatabaseServices
         /// </summary>
         public DbSet<Authorization> Authorizations { get; set; }
 
-        /// <summary>
-        /// Строка подключения
-        /// </summary>
-        private const string CONNECTION_STRING = @"Data Source=s-dev-01; 
-                                                 Database=ChatsDB; 
-                                                 Integrated Security=True;
-                                                 Connect Timeout=30;
-                                                 Encrypt=False;
-                                                 TrustServerCertificate=False;
-                                                 ApplicationIntent=ReadWrite;
-                                                 MultiSubnetFailover=False";
+
+
         public ChatDbContext()
         {
 

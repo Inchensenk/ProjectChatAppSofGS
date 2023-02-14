@@ -5,8 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DTO
+namespace Common.DTO
 {
+    /// <summary>
+    /// Data transfer object для диалогов
+    /// </summary>
     [ProtoContract]
     public class ConversationDTO
     {
@@ -14,7 +17,12 @@ namespace DTO
         public int Id { get; set; }
 
         [ProtoMember(2)]
-        public string ConversationName { get; set; } = null!;
+        public string ConversationName { get; set; }
+
+        public ConversationDTO()
+        {
+            ConversationName = null!;
+        }
 
         public override string ToString() => $"Id: {Id} || ConversationName: {ConversationName} ";
     }

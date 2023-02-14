@@ -9,19 +9,21 @@ using System.Windows.Input;
 
 namespace Client.ViewModels
 {
+    /// <summary>
+    /// Модель представления чатов
+    /// </summary>
     class ChatsUserControlViewModel : ViewModelBase
     {
-        /*
-        public ICommand NavigateAuthorizationCommand { get; }
 
-        public ChatsUserControlViewModel(INavigationService authorizationNavigationService)
-        {
-            NavigateAuthorizationCommand = new NavigateCommand(authorizationNavigationService);
-        }
-        */
-
+        /// <summary>
+        /// Команда для отоброжения в главной модели представления модели представления авторизации
+        /// </summary>
         public ICommand NavigateAuthorizationCommand {get;}
 
+        /// <summary>
+        /// Конструктор с параметром
+        /// </summary>
+        /// <param name="navigationStore">Класс NavigationStore хранит текущую модель представления</param>
         public ChatsUserControlViewModel(NavigationStore navigationStore)
         {
             NavigateAuthorizationCommand = new NavigateCommand<AuthorizationUserControlViewModel>(navigationStore, ()=> new AuthorizationUserControlViewModel(navigationStore));

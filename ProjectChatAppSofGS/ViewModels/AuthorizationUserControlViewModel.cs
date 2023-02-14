@@ -11,26 +11,14 @@ namespace Client.ViewModels
 {
     public class AuthorizationUserControlViewModel : ViewModelBase
     {
-        /*
         /// <summary>
-        /// Команда для перемещения в окно навигации
+        /// Команда для отоброжения в главной модели представления модели представления чатов
         /// </summary>
-        public ICommand NavigateChatsCommand { get;}
-
-        public AuthorizationUserControlViewModel(INavigationService chatsNavigationService)
-        {
-            NavigateChatsCommand = new NavigateCommand(chatsNavigationService);
-        }
-
-        //public ICommand NavigateRegistrationCommand { get;}
-        //public AuthorizationUserControlViewModel(INavigationService registrationNavigationService)
-        //{
-        //    NavigateRegistrationCommand = new
-        //}
-        */
-
         public ICommand NavigateChatsCommand { get; }
 
+        /// <summary>
+        /// Команда для отоброжения в главной модели представления модели представления регистрации
+        /// </summary>
         public ICommand NavigateRegistrationCommand { get; }
 
         public AuthorizationUserControlViewModel(NavigationStore navigationStore)

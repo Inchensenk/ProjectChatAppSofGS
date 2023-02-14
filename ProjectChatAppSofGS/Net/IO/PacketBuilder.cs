@@ -36,24 +36,6 @@ namespace Client.Net.IO
             _ms.WriteByte(opCode);
         }
 
-        /// <summary>
-        /// Write(ReadOnlySpan<Byte>): Записывает последовательность байтов, содержащихся в source, 
-        /// в текущий поток в памяти и перемещает текущую позицию внутри этого потока в памяти на число записанных байтов.
-        /// BitConverter Класс: Преобразует базовые типы данных в массив байтов, а массив байтов — в базовые типы данных.
-        /// </summary>
-        /// <param name="msg">Сообщение</param>
-        /*public void WriteMessage(string msg)
-        {
-            //длинна сообщения
-            var msgLenght = msg.Length;
-
-            //получение массива байт
-            _ms.Write(BitConverter.GetBytes(msgLenght));
-
-            //преобразование символов из сообщения в последовательность байт
-            _ms.Write(Encoding.ASCII.GetBytes(msg));
-        }*/
-
         public void WriteMessage(string msg)
         {
             var unicodeMessage = Encoding.UTF8.GetBytes(msg);
