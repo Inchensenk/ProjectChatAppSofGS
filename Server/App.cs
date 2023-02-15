@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace Server
 {
-    public class Program
+    public class App
     {
-        App app = new App();
-        await app.LaunchAsync();
+        public App() 
+        { 
+        
+        }
     }
 }
