@@ -42,8 +42,7 @@ namespace Common.DTO
         /// </summary>
         [ProtoMember(5)]
         public string LastName { get; set; }
-
-
+        
         /// <summary>
         /// Конструктор без параметров
         /// </summary>

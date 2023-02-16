@@ -1,13 +1,13 @@
 ﻿using AutoMapper;
+using Client.Models;
 using Common.DTO;
-using Server.EFCore.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Server.AutoMapper.Profiles
+namespace Client.AutoMapper.Profiles
 {
     /// <summary>
     /// Конфигурация маппинга диалога

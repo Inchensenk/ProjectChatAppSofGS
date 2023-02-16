@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
+using Client.Models;
 using Common.DTO;
-using Server.EFCore.Entities;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;

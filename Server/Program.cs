@@ -6,9 +6,13 @@ using System.Threading.Tasks;
 
 namespace Server
 {
-    public class Program
+    static class Program
     {
-        App app = new App();
-        await app.LaunchAsync();
+        static async Task Main(string[] args)
+        {
+            App app = new App();
+            await app.LaunchAsync();
+        }
+        
     }
 }
