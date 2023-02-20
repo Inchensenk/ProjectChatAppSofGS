@@ -43,5 +43,21 @@ namespace Server.Net
             _userProxyList = new Dictionary<int, UserProxy>();
             _networkProvidersBuffer = new Dictionary<int, IServerNetworkProvider>();
         }
+
+        /// <summary>
+        /// Асинхронный метод - начать работу контроллера
+        /// </summary>
+        public async Task RunAsync()
+        {
+            try
+            {
+                await _server.ListenIncomingConnectionsAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                _server.Stop();
+            }
+        }
     }
 }

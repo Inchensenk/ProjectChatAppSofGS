@@ -13,7 +13,6 @@ namespace Common.DTO
     [ProtoContract]
     public class MessageDTO
     {
-
         /// <summary>
         /// Идентификатор
         /// </summary>
@@ -21,10 +20,10 @@ namespace Common.DTO
         public int Id { get; init; }
 
         /// <summary>
-        /// Номер отправителя сообщения
+        /// Отправитель сообщения
         /// </summary>
         [ProtoMember(2)]
-        public string FromNumber { get; init; }
+        public UserDTO FromUser { get; init; }
 
         /// <summary>
         /// Текст сообщения
@@ -39,18 +38,16 @@ namespace Common.DTO
         public DateTime SendDateTime { get; init; }
 
         /// <summary>
-        /// Конструктор без параметров
+        /// Сообщение прочитано?
         /// </summary>
+        [ProtoMember(5)]
+        public bool IsRead { get; init; }
+
         public MessageDTO()
         {
-            FromNumber = null!;
+            FromUser = null!;
             MessageText = null!;
         }
 
-        /// <summary>
-        /// Переопределение метода ToString
-        /// </summary>
-        /// <returns>строка отоброжающая поля класса</returns>
-        public override string ToString() => $"Id: {Id} || FromNumber: {FromNumber} || MessageText: {MessageText} || SendDateTime: {SendDateTime}";
     }
 }

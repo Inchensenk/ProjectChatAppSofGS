@@ -18,11 +18,11 @@ namespace Client.AutoMapper
         /// Единственный экземпляр мапера
         /// </summary>
         private static ClientMapper _instance;
-
+        /*
         /// <summary>
         /// Поле хранит конфигурацию для маппинга авторизации
         /// </summary>
-        private Profile _authorizationProfile;
+        private Profile _authorizationProfile;*/
 
         /// <summary>
         /// Поле хранит конфигурацию для маппинга диалога
@@ -42,7 +42,7 @@ namespace Client.AutoMapper
 
         public ClientMapper()
         {
-            _authorizationProfile = new AuthorizationMapperConfiguration();
+            /*_authorizationProfile = new AuthorizationMapperConfiguration();*/
             _conversationProfile = new ConversationMapperConfiguration();
             _messageProfile = new MessageMapperConfiguration();
             _userProfile = new UserMapperConfiguration();
@@ -67,7 +67,7 @@ namespace Client.AutoMapper
         public IMapper CreateIMapper() => new MapperConfiguration(cfg =>
         {
             cfg.AddProfile(_userProfile);
-            cfg.AddProfile(_authorizationProfile);
+            /*cfg.AddProfile(_authorizationProfile);*/
             cfg.AddProfile(_conversationProfile);
             cfg.AddProfile(_messageProfile);
         }).CreateMapper();

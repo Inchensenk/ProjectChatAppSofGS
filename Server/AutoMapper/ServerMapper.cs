@@ -12,11 +12,12 @@ namespace Server.AutoMapper
     {
         private static ServerMapper _instance;
 
-
+        /*
         /// <summary>
         /// Поле хранит конфигурацию для маппинга авторизации
         /// </summary>
         private Profile _authorizationProfile;
+        */
 
         /// <summary>
         /// Поле хранит конфигурацию для маппинга диалога
@@ -37,7 +38,7 @@ namespace Server.AutoMapper
 
         private ServerMapper()
         {
-            _authorizationProfile = new AuthorizationMapperConfiguration();
+            /*_authorizationProfile = new AuthorizationMapperConfiguration();*/
             _conversationProfile = new ConversationMapperConfiguration();
             _messageProfile = new MessageMapperConfiguration();
             _userProfile = new UserMapperConfiguration();
@@ -58,7 +59,7 @@ namespace Server.AutoMapper
         public IMapper CreateIMapper() => new MapperConfiguration(cfg => 
         {
             cfg.AddProfile(_userProfile);
-            cfg.AddProfile(_authorizationProfile);
+            /*cfg.AddProfile(_authorizationProfile);*/
             cfg.AddProfile(_conversationProfile);
             cfg.AddProfile(_messageProfile);
         }).CreateMapper();

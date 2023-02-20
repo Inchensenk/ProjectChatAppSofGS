@@ -8,6 +8,7 @@ namespace Server.EFCore.Entities
 {
     public class Message
     {
+        /*
         public int Id { get; set; }
         public string FromNumber { get; set; }
         public string MessageText { get; set; }
@@ -21,5 +22,46 @@ namespace Server.EFCore.Entities
             FromNumber= null!;
             MessageText= null!;
         }
+        */
+        /// <summary>
+        /// Идентификатор
+        /// </summary>
+        public int Id { get; set; }
+
+        /// <summary>
+        /// Текст сообщения
+        /// </summary>
+        public string MessageText { get; set; }
+
+        /// <summary>
+        /// Отправитель сообщения
+        /// </summary>
+        public User FromUser { get; set; }
+
+        /// <summary>
+        /// Идентификатор отправителя
+        /// </summary>
+        public int FromUserId { get; set; }
+
+        /// <summary>
+        /// Беседа которая хранит сообщение
+        /// </summary>
+        public Conversation Conversation { get; set; }
+
+        /// <summary>
+        /// Идентификатор беседы хранящей сообщение
+        /// </summary>
+        public int ConversationId { get; set; }
+
+        /// <summary>
+        /// Статус сообщения, который говорит прочитано сообщение или нет
+        /// </summary>
+        public bool IsRead { get; set; }
+
+        /// <summary>
+        /// Информация о времени и дате отправки сообщения
+        /// </summary>
+        public DateTime DateTime { get; set; }
+
     }
 }

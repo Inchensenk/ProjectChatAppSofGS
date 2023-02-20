@@ -8,16 +8,42 @@ namespace Server.EFCore.Entities
 {
     public class Conversation
     {
+        /*
         public int Id { get; set; }
         public string ConversationName { get; set; }
         public int UserId { get; set; }
-        public User? User { get; set; }
-        public List<Message> Messages { get; set; }
+        public UserListinc? UserListinc { get; set; }
+        public List<Message> MessageListinc { get; set; }
 
         public Conversation()
         {
-            Messages = new List<Message>();
+            MessageListinc = new List<Message>();
             ConversationName= null!;
+        }
+        */
+
+        /// <summary>
+        /// Идентификатор
+        /// </summary>
+        public int Id { get; set; }
+
+        /// <summary>
+        /// Список пользователей
+        /// </summary>
+        public List<User> UserListinc { get; set; }
+
+        /// <summary>
+        /// Список сообщений
+        /// </summary>
+        public List<Message> MessageListinc { get; set; }
+
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        public Conversation()
+        {
+            UserListinc = new List<User>();
+            MessageListinc = new List<Message>();
         }
     }
 }

@@ -8,42 +8,49 @@ using System.Threading.Tasks;
 namespace Common.DTO
 {
     /// <summary>
-    /// Data transfer object авторизации
+    /// DTO: пользователь
     /// </summary>
     [ProtoContract]
-    public class AuthorizationDTO
+    public class UserDTO
     {
         /// <summary>
         /// Идентификатор
         /// </summary>
         [ProtoMember(1)]
-        public int Id { get; set; }
+        public int Id { get; init; }
 
         /// <summary>
-        /// Логин
+        /// Имя
         /// </summary>
         [ProtoMember(2)]
-        public string Login { get; set; }
+        public string FirstName { get; init; }
+
+        /// <summary>
+        /// Номер телефона
+        /// </summary>
+        [ProtoMember(3)]
+        public string PhoneNumber { get; init; }
 
         /// <summary>
         /// Пароль
         /// </summary>
-        [ProtoMember(3)]
-        public string Password { get; set; } 
+        [ProtoMember(4)]
+        public string Password { get; init; }
 
-        /// <summary>
-        /// Конструктор без параметров
-        /// </summary>
-        public AuthorizationDTO()
+        public UserDTO()
         {
-            Login = null!;
+            FirstName = null!;
+            PhoneNumber = null!;
             Password = null!;
         }
 
         /// <summary>
         /// Переопределение метода ToString
         /// </summary>
-        /// <returns>строка отоброжающая поля класса</returns>
-        public override string ToString() => $"Id: {Id} || Login: {Login} || Password: {Password}";
-    }
+        /// <returns>Строковое представление класса</returns>
+        public override string ToString()
+        {
+            return $"Id: {Id}. PhoneNumber: {PhoneNumber}. Password: {Password}.";
+        }
+}
 }

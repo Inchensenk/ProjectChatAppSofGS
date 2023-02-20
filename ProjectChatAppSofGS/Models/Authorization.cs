@@ -9,6 +9,7 @@ namespace Client.Models
 {
     public class Authorization : ViewModelBase
     {
+        /*
         #region Class fields
 
         /// <inheritdoc cref="Id"/>
@@ -78,6 +79,6 @@ namespace Client.Models
         }
 
         #endregion Class constructors
-
+        */
     }
 }

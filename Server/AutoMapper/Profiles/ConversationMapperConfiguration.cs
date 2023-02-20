@@ -18,7 +18,10 @@ namespace Server.AutoMapper.Profiles
         {
             /*В методе CreateMap первый параметр: откуда маппит, а второй: куда маппить. 
              *Метод ReverseMap() позволяет маппить в обратную сторону при необходимости*/
+
             CreateMap<Conversation, ConversationDTO>().ReverseMap();
+
+            CreateMap<>
         }
     }
 }

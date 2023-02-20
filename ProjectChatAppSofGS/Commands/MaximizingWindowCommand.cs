@@ -23,10 +23,5 @@ namespace Client.Commands
                 Application.Current.MainWindow.WindowState = WindowState.Normal;
             }
         }
-
-        public override void Execute(object parameter, MouseButtonEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

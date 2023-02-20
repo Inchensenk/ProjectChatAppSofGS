@@ -18,10 +18,11 @@ namespace Client.AutoMapper.Profiles
 
         public AuthorizationMapperConfiguration() 
         {
+            
             /*В методе CreateMap первый параметр: откуда маппит, а второй: куда маппить. 
              *Метод ReverseMap() позволяет маппить в обратную сторону при необходимости*/
 
-            CreateMap<Authorization, AuthorizationDTO>().ReverseMap();
+            /*CreateMap<Authorization, AuthorizationDTO>().ReverseMap();*/
         }
     }
 }
