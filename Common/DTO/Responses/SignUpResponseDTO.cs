@@ -9,15 +9,21 @@ using System.Threading.Tasks;
 namespace Common.DTO.Responses
 {
     /// <summary>
-    /// DTO: ответ на запрос серверу от клиента
+    /// DTO: ответ на запрос регистрации пользователя в аккаунте
     /// </summary>
     [ProtoContract]
-    public class ResponseDTO
+    public class SignUpResponseDTO
     {
+        /// <summary>
+        /// Идентификатор пользователя
+        /// </summary>
+        [ProtoMember(1)]
+        public int UserId { get; init; }
+
         /// <summary>
         /// Статус ответа
         /// </summary>
-        [ProtoMember(1)]
+        [ProtoMember(2)]
         public NetworkResponseStatus Status { get; init; }
     }
 }

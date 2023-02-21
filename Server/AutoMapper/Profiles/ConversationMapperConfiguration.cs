@@ -21,7 +21,7 @@ namespace Server.AutoMapper.Profiles
 
             CreateMap<Conversation, ConversationDTO>().ReverseMap();
 
-            CreateMap<>
+            
         }
     }
 }

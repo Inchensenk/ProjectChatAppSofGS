@@ -8,29 +8,28 @@ using System.Threading.Tasks;
 namespace Common.DTO.Requests
 {
     /// <summary>
-    /// DTO: запрос на поиск пользователя среди зарегестрированных
+    /// DTO: запрос на вход в мессенджер
     /// </summary>
     [ProtoContract]
-    public class SearchRequestDTO
+    public class SignInRequestDTO
     {
-        /// <summary>
-        /// Имя
-        /// </summary>
-        [ProtoMember(1)]
-        public string FirstName { get; set; }
-
         /// <summary>
         /// Номер телефона
         /// </summary>
+        [ProtoMember(1)]
+        public string PhoneNumber { get; init; }
+
+        /// <summary>
+        /// Пароль
+        /// </summary>
         [ProtoMember(2)]
-        public string PhoneNumber{ get; set; }
+        public string Password { get; init; }
 
-        public SearchRequestDTO()
+        public SignInRequestDTO()
         {
-            FirstName = null!;
             PhoneNumber = null!;
+            Password = null!;
         }
-
 
         /// <summary>
         /// Перегрузка ToString()
@@ -38,13 +37,7 @@ namespace Common.DTO.Requests
         /// <returns>Строковое представление класса</returns>
         public override string ToString()
         {
-            if (String.IsNullOrEmpty(FirstName))
-                return $"Телефон: {PhoneNumber}.";
-
-            else if (String.IsNullOrEmpty(PhoneNumber))
-                return $"Имя: {FirstName}.";
-
-            return $"Имя: {FirstName}. Телефон: {PhoneNumber}.";
+            return $"Телефон: {PhoneNumber}.";
         }
     }
 }

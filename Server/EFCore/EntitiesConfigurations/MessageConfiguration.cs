@@ -13,11 +13,6 @@ namespace Server.EFCore.EntitiesConfigurations
     {
         public void Configure(EntityTypeBuilder<Message> builder)
         {
-            /*
-            builder.HasKey(a => a.Id);
-
-            builder.HasOne(c => c.Conversation).WithMany(m => m.MessageListinc);
-            */
 
             builder.HasKey(message => message.Id);/*PrimaryKey*/
 
@@ -38,7 +33,7 @@ namespace Server.EFCore.EntitiesConfigurations
                    .IsRequired()
                    .HasDefaultValue(false);/*статус не может быть пустой и значение по умолчанию у статуса false (то есть по умолчанию сообщение непрочитанно)*/
 
-            builder.Property(message => message.DateTime)
+            builder.Property(message => message.SendDateTime)
                    .IsRequired();/*информация о времени отправки сообщения не может быть пустой*/
         }
     }

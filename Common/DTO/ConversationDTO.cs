@@ -20,23 +20,26 @@ namespace Common.DTO
         public int Id { get; set; }
 
         /// <summary>
-        /// Имя диалога
+        /// Список пользователей учавствующих в беседе
         /// </summary>
         [ProtoMember(2)]
-        public string ConversationName { get; set; }
+        public List<UserDTO> UserListinc { get; set; }
+
+        /// <summary>
+        /// Список сообщений в диалоге
+        /// </summary>
+        [ProtoMember(3)]
+        public List<MessageDTO> MessageListinc { get; set; }
 
         /// <summary>
         /// Конструктор без параметров
         /// </summary>
         public ConversationDTO()
         {
-            ConversationName = null!;
+            UserListinc = new List<UserDTO>();
+            MessageListinc = new List<MessageDTO>();
         }
 
-        /// <summary>
-        /// Переопределение метода ToString
-        /// </summary>
-        /// <returns>строка отоброжающая поля класса</returns>
-        public override string ToString() => $"Id: {Id} || ConversationName: {ConversationName} ";
+
     }
 }

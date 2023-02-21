@@ -59,7 +59,6 @@ namespace Server.AutoMapper
         public IMapper CreateIMapper() => new MapperConfiguration(cfg => 
         {
             cfg.AddProfile(_userProfile);
-            /*cfg.AddProfile(_authorizationProfile);*/
             cfg.AddProfile(_conversationProfile);
             cfg.AddProfile(_messageProfile);
         }).CreateMapper();

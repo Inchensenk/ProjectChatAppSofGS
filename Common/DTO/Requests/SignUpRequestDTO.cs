@@ -4,44 +4,36 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
-namespace Common.DTO
+namespace Common.DTO.Requests
 {
-    /// <summary>
-    /// DTO: пользователь
-    /// </summary>
     [ProtoContract]
-    public class UserDTO
+    public class SignUpRequestDTO
     {
-        /// <summary>
-        /// Идентификатор
-        /// </summary>
-        [ProtoMember(1)]
-        public int Id { get; init; }
-
-        /// <summary>
-        /// Имя
-        /// </summary>
-        [ProtoMember(2)]
-        public string FirstName { get; init; }
-
         /// <summary>
         /// Номер телефона
         /// </summary>
-        [ProtoMember(3)]
+        [ProtoMember(1)]
         public string PhoneNumber { get; init; }
 
         /// <summary>
         /// Пароль
         /// </summary>
-        [ProtoMember(4)]
+        [ProtoMember(2)]
         public string Password { get; init; }
 
-        public UserDTO()
+        /// <summary>
+        /// Имя
+        /// </summary>
+        [ProtoMember(3)]
+        public string FirstName { get; init; }
+
+        public SignUpRequestDTO()
         {
             FirstName = null!;
-            PhoneNumber = null!;
             Password = null!;
+            PhoneNumber = null!;
         }
 
         /// <summary>
@@ -50,7 +42,7 @@ namespace Common.DTO
         /// <returns>Строковое представление класса</returns>
         public override string ToString()
         {
-            return $"Id: {Id}. PhoneNumber: {PhoneNumber}. Password: {Password}.";
+            return $"Телефон: {PhoneNumber}. Имя: {FirstName}";
         }
-}
+    }
 }

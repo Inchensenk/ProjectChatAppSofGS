@@ -15,15 +15,14 @@ namespace Server.EFCore.DatabaseServices
         /// <summary>
         /// Строка подключения
         /// </summary>
-        private const string CONNECTION_STRING = @"Server= s-dev-01; Database=Chatik; Trusted_Connection=True; Encrypt=false"
-                                                 /*@"Data Source=s-dev-01; 
+        private const string CONNECTION_STRING =@"Data Source=s-dev-01; 
                                                  Database=ChatsDB; 
                                                  Integrated Security=True;
                                                  Connect Timeout=30;
                                                  Encrypt=False;
                                                  TrustServerCertificate=False;
                                                  ApplicationIntent=ReadWrite;
-                                                 MultiSubnetFailover=False"*/;
+                                                 MultiSubnetFailover=False";
 
         
         /// <summary>
@@ -69,9 +68,8 @@ namespace Server.EFCore.DatabaseServices
             modelBuilder.ApplyConfiguration(new UserConfiguration());
             modelBuilder.ApplyConfiguration(new MessageConfiguration());
             modelBuilder.ApplyConfiguration(new ConversationConfiguration());
-            /*modelBuilder.ApplyConfiguration(new AuthorizationConfiguration());*/
         }
-/*
+
         /// <summary>
         /// Закрытие и утилизация файлового потока StreamWriter
         /// </summary>
@@ -81,6 +79,6 @@ namespace Server.EFCore.DatabaseServices
             await base.DisposeAsync();
             await logStream.DisposeAsync();
         }
-*/
+
     }
 }

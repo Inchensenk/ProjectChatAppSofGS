@@ -8,21 +8,6 @@ namespace Server.EFCore.Entities
 {
     public class Message
     {
-        /*
-        public int Id { get; set; }
-        public string FromNumber { get; set; }
-        public string MessageText { get; set; }
-        public DateTime SendDateTime { get; set; }
-
-        public int ConversationId { get; set; }
-        public Conversation? Conversation { get; set; }
-
-        public Message()
-        {
-            FromNumber= null!;
-            MessageText= null!;
-        }
-        */
         /// <summary>
         /// Идентификатор
         /// </summary>
@@ -61,7 +46,14 @@ namespace Server.EFCore.Entities
         /// <summary>
         /// Информация о времени и дате отправки сообщения
         /// </summary>
-        public DateTime DateTime { get; set; }
+        public DateTime SendDateTime { get; set; }
+
+        public Message()
+        {
+            Conversation = null!;
+            MessageText= null!;
+            FromUser = null!;
+        }
 
     }
 }

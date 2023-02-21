@@ -1,7 +1,8 @@
 ﻿using AutoMapper;
-using Azure;
+using Common.DTO.Responses;
 using Common.Network;
 using ProtoBuf.Meta;
+using Server.EFCore.DatabaseServices;
 using Server.Net.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -72,7 +73,7 @@ namespace Server.RequestProcessing.RequestHandlers
         protected virtual void OnError(NetworkMessage networkMessage, IServerNetworkProvider networkProvider)
         {
             Response response = new Response(NetworkResponseStatus.FatalError);
-            SendErrorResponse<Response, ResponseDto>(networkProvider, response, NetworkMessageCode.DeleteMessageResponseCode);
+            SendErrorResponse<Response, ResponseDTO>(networkProvider, response, NetworkMessageCode.DeleteMessageResponseCode);
         }
 
         /// <summary>

@@ -8,20 +8,6 @@ namespace Server.EFCore.Entities
 {
     public class Conversation
     {
-        /*
-        public int Id { get; set; }
-        public string ConversationName { get; set; }
-        public int UserId { get; set; }
-        public UserListinc? UserListinc { get; set; }
-        public List<Message> MessageListinc { get; set; }
-
-        public Conversation()
-        {
-            MessageListinc = new List<Message>();
-            ConversationName= null!;
-        }
-        */
-
         /// <summary>
         /// Идентификатор
         /// </summary>
