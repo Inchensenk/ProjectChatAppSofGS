@@ -1,16 +1,14 @@
 ﻿using AutoMapper;
 using Common.DTO.Responses;
 using Common.Network;
-using ProtoBuf.Meta;
 using Server.EFCore.DatabaseServices;
 using Server.Net.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using Server.RequestResponse.Responses;
+using System.Net.Http.Headers;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace Server.RequestProcessing.RequestHandlers
+
+namespace Server.RequestResponse.RequestProcessing.RequestHandlers
 {
     /// <summary>
     /// Базовый абстрактный класс - бработчик сетевого сообщения
@@ -72,9 +70,21 @@ namespace Server.RequestProcessing.RequestHandlers
         /// <param name="networkProvider">Сетевой провайдер</param>
         protected virtual void OnError(NetworkMessage networkMessage, IServerNetworkProvider networkProvider)
         {
-            Response response = new Response(NetworkResponseStatus.FatalError);
+            Response response = new(NetworkResponseStatus.FatalError);
             SendErrorResponse<Response, ResponseDTO>(networkProvider, response, NetworkMessageCode.DeleteMessageResponseCode);
+
         }
+
+        private void SendErrorResponse<TResponse, TResponseDTO>(IServerNetworkProvider networkProvider, TResponse response, NetworkMessageCode deleteMessageResponseCode)
+            where TResponseDTO : class
+        {
+            //byte[] responseBytes = NetworkMessageConverter<TResponse, TResponseDTO>.Convert(response, code);
+
+            //_conectionController.BroadcastError(responseBytes, networkProvider);
+        }
+
+
+
 
         /// <summary>
         /// Обрабатывает сетевое сообщение
@@ -84,35 +94,5 @@ namespace Server.RequestProcessing.RequestHandlers
         /// <param name="networkProvider">Сетевой провайдер</param>
         /// <returns>Ответ на сетевое сообщение в виде массива байт</returns>
         protected abstract byte[] OnProcess(DbService dbService, NetworkMessage networkMessage, IServerNetworkProvider networkProvider);
-
-        /// <summary>
-        /// Отправить ошибку в качестве ответа на сетевое сообщение
-        /// </summary>
-        /// <typeparam name="TResponse">Тип объекта представляющего ответ</typeparam>
-        /// <typeparam name="TResponseDto">Тип объекта, представляющего DTO - ответ</typeparam>
-        /// <param name="networkProvider">Сетевой провайдер</param>
-        /// <param name="response">Ответ на сетевое сообщение</param>
-        /// <param name="code">Код сетевого сообщения</param>
-        protected void SendErrorResponse<TResponse, TResponseDto>(IServerNetworkProvider networkProvider, TResponse response, NetworkMessageCode code)
-            where TResponseDto : class
-        {
-            byte[] responseBytes = NetworkMessageConverter<TResponse, TResponseDto>.Convert(response, code);
-
-            _conectionController.BroadcastError(responseBytes, networkProvider);
-        }
-
-        /// <summary>
-        /// Напечать отчет о запросе и ответе
-        /// </summary>
-        /// <param name="networkProviderId">Id сетевого провайдера</param>
-        /// <param name="requestCode">Код запроса</param>
-        /// <param name="responseCode">Код ответа</param>
-        /// <param name="request">Запрос</param>
-        /// <param name="responseStatus">Статус ответа</param>
-        protected void PrintReport(int networkProviderId, NetworkMessageCode requestCode, NetworkMessageCode responseCode, string request, NetworkResponseStatus responseStatus)
-        {
-            ReportPrinter.PrintRequestReport(networkProviderId, requestCode, request);
-            ReportPrinter.PrintResponseReport(networkProviderId, responseCode, responseStatus);
-        }
     }
 }

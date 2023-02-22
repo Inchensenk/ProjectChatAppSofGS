@@ -42,10 +42,12 @@
                              Style="{StaticResource MaterialDesignOutlinedRevealPasswordBox}"/>
 
 
+                <!--IsDefault="True" делает привязку кнопки к клавише Enter клавиатуры-->
                 <Button x:Name="authButton"
                         Content="Войти"
                         Margin="0 20"
-                        Command="{Binding NavigateChatsCommand}"/>
+                        Command="{Binding NavigateChatsCommand}"
+                        IsDefault="True"/>
 
                 <TextBlock Text="Уже есть аккаунт?"
                            TextAlignment="Center"

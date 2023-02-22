@@ -19,7 +19,7 @@ namespace Server.EFCore.EntitiesConfigurations
         /// <summary>
         /// Максимальная длина имени
         /// </summary>
-        private const int MAX_NAME_LENGTH = 66;
+        private const int MAX_NAME_LENGTH = 20;
 
         /// <summary>
         /// Максимальная длина телефона
@@ -39,7 +39,7 @@ namespace Server.EFCore.EntitiesConfigurations
                    .HasMaxLength(PHONE_NUMBER_LENGTH)
                    .IsRequired();
 
-            builder.HasKey(user => user.PhoneNumber);
+            builder.HasAlternateKey(user => user.PhoneNumber);
 
             builder.Property(user => user.Password)
                    .HasMaxLength(MAX_LENGTH_OF_PASSWORD)

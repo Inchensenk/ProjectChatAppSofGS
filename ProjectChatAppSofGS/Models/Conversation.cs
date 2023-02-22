@@ -68,28 +68,30 @@ namespace Client.Models
         /// <inheritdoc cref="Id"/>
         private int _id;
 
+        /// <inheritdoc cref="CurrentUser"/>
         private User _currentUser;
 
+        /// <inheritdoc cref="AreThereAnyHaveUnreadMessages"/>
         private bool _areThereAnyHaveUnreadMessages;
 
         /// <summary>
         /// Свойство: Идентификатор
         /// </summary>
-        public int Id
-        {
-            get => _id;
-            set { _id = value; OnPropertyChanged(); }
-        }
+        public int Id { get => _id; set { _id = value; OnPropertyChanged(); } }
 
         /// <summary>
         /// Свойство: Текущий пользователь
         /// </summary>
-        public User CurrentUser
-        {
-            get => _currentUser;
-            set { _currentUser = value; OnPropertyChanged();}
-        }
+        public User CurrentUser { get => _currentUser; set { _currentUser = value; OnPropertyChanged();} }
 
-        //public string Title => User;
+        /// <summary>
+        /// Свойство: Флаг, который хранит информацию прочитано сообщение или нет
+        /// </summary>
+        public bool AreThereAnyHaveUnreadMessages { get=> _areThereAnyHaveUnreadMessages; set { _areThereAnyHaveUnreadMessages = value; OnPropertyChanged(); } }
+
+        /// <summary>
+        /// Список пользователей учавствующих в беседе
+        /// </summary>
+        public List<User> UserListingСonversationalist { get; set; }
     }
 }

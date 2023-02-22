@@ -73,7 +73,7 @@ namespace Server.EFCore.DatabaseServices
         /// <summary>
         /// Закрытие и утилизация файлового потока StreamWriter
         /// </summary>
-        /// <returns>файл лога mylog.txt</returns>
+        /// <returns>файл лога пераций: mylog.txt</returns>
         public override async ValueTask DisposeAsync()
         {
             await base.DisposeAsync();

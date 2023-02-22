@@ -18,7 +18,7 @@ namespace Server.AutoMapper.Profiles
          *Метод ReverseMap() позволяет маппить в обратную сторону при необходимости*/
         public UserMapperConfiguration()
         {
-            CreateMap<User, UserDto>().ReverseMap();
+            CreateMap<User, UserDTO>().ReverseMap();
         }
     }
 }

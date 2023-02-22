@@ -7,6 +7,7 @@ using System.Windows.Input;
 
 namespace Client.Commands
 {
+    
     public class PressEnterCommand : ICommand
     {
         public event EventHandler? CanExecuteChanged;
@@ -15,7 +16,7 @@ namespace Client.Commands
 
         public void Execute(object? parameter, KeyEventArgs e)
         {
-            
+            /*Надо сделать*/
         }
 
         public void Execute(object? parameter)

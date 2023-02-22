@@ -59,8 +59,11 @@
                            Margin=" 0,-8,0,-5"/>
 
                 </StackPanel>
+
+                <!--IsCancel="True" делает привязку кнопки к лавише Esc у клавиатуры-->
                 <Button Content="Выход"
-                        Command="{Binding NavigateAuthorizationCommand}"/>
+                        Command="{Binding NavigateAuthorizationCommand}"
+                        IsCancel="True"/>
             </StackPanel>
 
         </Grid>

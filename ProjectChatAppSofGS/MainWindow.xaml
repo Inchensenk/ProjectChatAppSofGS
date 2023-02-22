@@ -23,7 +23,7 @@
 
         <Grid.RowDefinitions>
             <!--Строка заголовка-->
-            <RowDefinition Height="22"/>
+            <RowDefinition Height="30"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
@@ -39,6 +39,7 @@
                        Foreground="Gray"
                        FontWeight="Bold"
                        HorizontalAlignment="Left" 
+                       VerticalAlignment="Center"
                        FontSize="12"
                        Padding="10,1,1,1"/>
 

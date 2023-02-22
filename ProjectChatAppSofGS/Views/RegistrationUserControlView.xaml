@@ -37,7 +37,6 @@
                          Style="{StaticResource MaterialDesignOutlinedTextBox}"/>
 
                 
-
                 <PasswordBox x:Name="passBox"    
                              materialDesign:HintAssist.Hint="Введите пароль"
                              Style="{StaticResource MaterialDesignOutlinedRevealPasswordBox}"/>

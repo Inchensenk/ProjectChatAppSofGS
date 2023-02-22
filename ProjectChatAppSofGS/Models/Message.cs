@@ -32,44 +32,24 @@ namespace Client.Models
         /// <summary>
         /// Свойство: Идентификатор
         /// </summary>
-        public int Id
-        {
-            get => _id; 
-            set { _id = value; OnPropertyChanged(); }
-        }
+        public int Id { get => _id; set { _id = value; OnPropertyChanged(); } }
 
         /// <summary>
         /// Свойство: Номер отправителя сообщения
         /// </summary>
-        public string FromNumber
-        {
-            get => _fromNumber; 
-            set { _fromNumber = value; OnPropertyChanged(); }
-        }
+        public string FromNumber { get => _fromNumber; set { _fromNumber = value; OnPropertyChanged(); } }
 
         /// <summary>
         /// Свойство: Текст сообщения
         /// </summary>
-        public string MessageText
-        {
-            get => _messageText;
-            set { _messageText = value; OnPropertyChanged(); }
-        }
+        public string MessageText { get => _messageText; set { _messageText = value; OnPropertyChanged(); } }
 
         /// <summary>
         /// Свойство: Время отправки сообщения
         /// </summary>
-        public DateTime SendDateTime
-        {
-            get => _sendDateTime;
-            set { _sendDateTime = value; OnPropertyChanged();}
-        }
+        public DateTime SendDateTime { get => _sendDateTime; set { _sendDateTime = value; OnPropertyChanged();} }
 
-        public bool IsCurrentUserMessage
-        {
-            get => _isCurrentUserMessage;
-            set { _isCurrentUserMessage = value; OnPropertyChanged(); }
-        }
+        public bool IsCurrentUserMessage { get => _isCurrentUserMessage; set { _isCurrentUserMessage = value; OnPropertyChanged(); } }
 
         #endregion Class properties
 

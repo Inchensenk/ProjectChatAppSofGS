@@ -9,7 +9,8 @@ namespace Client.Models
 {
     public class User : ViewModelBase
     {
-
+        #region 
+        /*
         #region Class fields
         /// <inheritdoc cref="Id"/>
         private int _id;
@@ -105,6 +106,40 @@ namespace Client.Models
             LastName = null!;
             PhoneNumber = null!;
         }
+        #endregion*/
         #endregion
+
+        /// <inheritdoc cref="Id"/>
+        private int _id;
+
+        /// <inheritdoc cref="FirstName"/>
+        private string _firstName;
+
+        /// <inheritdoc cref="PhoneNumber"/>
+        private string _phoneNumber;
+
+        /// <inheritdoc cref="Password"/>
+        private string _password;
+
+        /// <summary>
+        /// Идентификатор
+        /// </summary>
+        public int Id { get => _id; set {_id= value; OnPropertyChanged(); } }
+
+        /// <summary>
+        /// Имя
+        /// </summary>
+        public string FirstName {  get => _firstName; set { _firstName= value; OnPropertyChanged(); } }
+
+        /// <summary>
+        /// Номер телефона
+        /// </summary>
+        public string PhoneNumber { get => _phoneNumber; set { _phoneNumber = value; OnPropertyChanged(); } }
+
+        /// <summary>
+        /// Пароль
+        /// </summary>
+        public string Password { get => _password; set { _password = value; OnPropertyChanged(); } } 
+        
     }
 }
