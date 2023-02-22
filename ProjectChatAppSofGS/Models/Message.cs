@@ -10,7 +10,7 @@ namespace Client.Models
     public class Message : ViewModelBase
     {
         #region Class fields
-
+        /*
         /// <inheritdoc cref="Id"/>
         private int _id;
 
@@ -62,6 +62,40 @@ namespace Client.Models
             SendDateTime = DateTime.Now;
             IsCurrentUserMessage = true;
         }
+        */
         #endregion Сlass constructors
+
+        /// <inheritdoc cref="Id"/>
+        private int _id;
+
+        /// <inheritdoc cref="MessageText"/>
+        private string _messageText;
+
+        /// <inheritdoc cref="IsRead"/>
+        private bool _isRead;
+
+        /// <inheritdoc cref="IsCurrentUserMessage"/>
+        private bool _isCurrentUserMessage;
+
+        /// <summary>
+        /// Идентификатор сообщения
+        /// </summary>
+        public int Id { get => _id; set { _id = value; OnPropertyChanged(); } }
+
+        /// <summary>
+        /// Текст сообщения
+        /// </summary>
+        public string MessageText { get => _messageText; set { _messageText = value; OnPropertyChanged(); } }
+
+        /// <summary>
+        /// Флаг, который хранит информацию: прочитано сообщение или нет
+        /// </summary>
+        public bool IsRead { get => _isRead; set { _isRead = value; OnPropertyChanged(); } }
+
+        /// <summary>
+        /// Флаг, который хранит информацию: принадлежит сообщение текущему пользователю или нет
+        /// </summary>
+        public bool IsCurrentUserMessage { get => _isCurrentUserMessage; set { _isCurrentUserMessage = value; OnPropertyChanged(); } }
+
     }
 }

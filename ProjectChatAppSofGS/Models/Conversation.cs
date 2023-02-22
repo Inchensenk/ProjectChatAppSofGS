@@ -1,6 +1,7 @@
 ﻿using Client.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -93,5 +94,40 @@ namespace Client.Models
         /// Список пользователей учавствующих в беседе
         /// </summary>
         public List<User> UserListingСonversationalist { get; set; }
+
+        /// <summary>
+        /// Имя беседы будет таким же как и имя собеседника
+        /// </summary>
+        public string Title => UserListingСonversationalist.First(n => n.Id != _currentUser.Id).FirstName;
+
+        /// <summary>
+        /// Обозреваемый список сообщений в беседе
+        /// </summary>
+        public ObservableCollection<Message> MessageListing { get; init; }
+
+
+
+        public Conversation()
+        {
+            Id= 0;
+            UserListingСonversationalist = new List<User>();
+            MessageListing = new ObservableCollection<Message>();
+        }
+
+        public Conversation(User user1, User user2) : this()
+        {
+            UserListingСonversationalist.Add(user1);
+            UserListingСonversationalist.Add(user2);
+        }
+
+        /// <summary>
+        /// Проверка: прочитаны последние сообщения или нет
+        /// </summary>
+        public void CheckLastMessagesRead()
+        {
+            AreThereAnyHaveUnreadMessages = MessageListing.Count > 0
+            && MessageListing.Last().IsCurrentUserMessage == false
+            && MessageListing.Last().IsRead == false;
+        }
     }
 }
