@@ -44,6 +44,10 @@ namespace Server.AutoMapper
             _userProfile = new UserMapperConfiguration();
         }
 
+        /// <summary>
+        /// Получение единственного экземпляра мапинга
+        /// </summary>
+        /// <returns>Единственный экземпляр ServerMapper</returns>
         public static ServerMapper GetInstance()
         {
             //Если _instance равен NULL то присваиваем ему единственны экземпляр класса для маппинга

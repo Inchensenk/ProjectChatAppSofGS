@@ -78,7 +78,7 @@ namespace Server.RequestResponse.RequestProcessing.RequestHandlers
         private void SendErrorResponse<TResponse, TResponseDTO>(IServerNetworkProvider networkProvider, TResponse response, NetworkMessageCode deleteMessageResponseCode)
             where TResponseDTO : class
         {
-            //byte[] responseBytes = NetworkMessageConverter<TResponse, TResponseDTO>.Convert(response, code);
+            byte[] responseBytes = NetworkMessageConverter<TResponse, TResponseDTO>.Convert(response, code);
 
             //_conectionController.BroadcastError(responseBytes, networkProvider);
         }

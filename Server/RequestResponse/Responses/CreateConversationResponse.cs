@@ -12,8 +12,14 @@ namespace Server.RequestResponse.Responses
     /// </summary>
     public class CreateConversationResponse : Response
     {
+        /// <summary>
+        /// Идентификатор созданной беседы
+        /// </summary>
         public int ConversationId { get; init; }
 
+        /// <summary>
+        /// Идентификатор сообщения
+        /// </summary>
         public int MessageId { get; init; }
 
         public CreateConversationResponse() : base() { }

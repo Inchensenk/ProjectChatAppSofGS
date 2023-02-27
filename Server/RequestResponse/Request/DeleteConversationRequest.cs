@@ -16,6 +16,10 @@ namespace Server.RequestResponse.Request
         /// </summary>
         public int ConversationId { get; init; }
 
+        /// <summary>
+        /// Конструктор с параметром
+        /// </summary>
+        /// <param name="conversationId">Идентификатор беседы</param>
         public DeleteConversationRequest(int conversationId)
         {
             ConversationId = conversationId;
