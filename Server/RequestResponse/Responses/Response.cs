@@ -18,15 +18,18 @@ namespace Server.RequestResponse.Responses
         /// </summary>
         public NetworkResponseStatus Status { get; set; }
 
-
+        /// <summary>
+        /// Конструктор с параметром
+        /// </summary>
+        /// <param name="status">Статус ответа</param>
         public Response(NetworkResponseStatus status)
         {
             Status = status;
         }
 
-        public Response()
-        {
-
-        }
+        /// <summary>
+        /// Конструктор по умолчанию
+        /// </summary>
+        public Response() { }
     }
 }

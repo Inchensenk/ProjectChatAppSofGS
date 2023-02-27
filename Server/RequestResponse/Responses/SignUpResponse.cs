@@ -31,16 +31,11 @@ namespace Server.RequestResponse.Responses
         /// Конструктор с параметром
         /// </summary>
         /// <param name="status">Статус ответа</param>
-        public SignUpResponse(NetworkResponseStatus status) : base(status)
-        {
-        }
+        public SignUpResponse(NetworkResponseStatus status) : base(status) { }
 
         /// <summary>
         /// Конструктор по умолчанию
         /// </summary>
-        public SignUpResponse()
-        {
-
-        }
+        public SignUpResponse() { }
     }
 }

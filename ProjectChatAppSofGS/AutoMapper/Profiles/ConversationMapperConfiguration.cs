@@ -2,6 +2,8 @@
 using Client.Models;
 using Common.DTO;
 using Common.DTO.Requests;
+using Common.DTO.Responses;
+using Server.RequestResponse.Responses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +23,12 @@ namespace Client.AutoMapper.Profiles
              *Метод ReverseMap() позволяет маппить в обратную сторону при необходимости*/
             CreateMap<Conversation, ConversationDTO>().ReverseMap();
 
-            //CreateMap<Conversation, CreateConversationRequestDTO>().ForMember(d => d.UsersId, e => e.MapFrom(conversation => conversation.CurrentUser)
+            CreateMap<Conversation, CreateConversationRequestDTO>().ForMember(dest => dest.UsersId, exp => exp.MapFrom(conversation => conversation.UserListingСonversationalist)).ReverseMap();
+
+
+            CreateMap<Conversation, CreateConversationResponse>().ForMember(dest => dest.ConversationId, exp => exp.MapFrom(dial => dial.Id))
+                                                                 .ForMember(dest => dest.MessageId, exp => exp.MapFrom(dial => dial.MessageListing.First().Id)).ReverseMap();
+
         }
     }
 }

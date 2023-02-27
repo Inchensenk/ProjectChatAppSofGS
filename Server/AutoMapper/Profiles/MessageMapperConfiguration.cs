@@ -1,6 +1,10 @@
 ﻿using AutoMapper;
 using Common.DTO;
+using Common.DTO.Requests;
+using Common.DTO.Responses;
 using Server.EFCore.Entities;
+using Server.RequestResponse.Request;
+using Server.RequestResponse.Responses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +23,10 @@ namespace Server.AutoMapper.Profiles
             /*В методе CreateMap первый параметр: откуда маппит, а второй: куда маппить. 
              *Метод ReverseMap() позволяет маппить в обратную сторону при необходимости*/
             CreateMap<Message, MessageDTO>().ReverseMap();
+            CreateMap<SendMessageRequestDTO, SendMessageRequest>().ReverseMap();
+            CreateMap<SendMessageResponse, SendMessageResponseDTO>().ReverseMap();
+            CreateMap<ReadMessagesRequest, ReadMessagesRequestDTO>().ReverseMap();
+            CreateMap<DeleteMessageRequest, DeleteMessageRequestDTO>().ReverseMap();
         }
     }
 }

@@ -8,17 +8,30 @@ using System.Threading.Tasks;
 
 namespace Server
 {
+    /// <summary>
+    /// Приложение - серверная часть мессенжера
+    /// </summary>
     public class App
     {
-       // private ConnectionController _connectionController;
+        /// <summary>
+        /// Отвечает за соединение по сети с клиентами
+        /// </summary>
+        private ConnectionController _connectionController;
+
+        /// <summary>
+        /// Конструктор по умолчанию
+        /// </summary>
         public App()
         {
-           // _connectionController = new ConnectionController();
+            _connectionController = new ConnectionController();
         }
 
+        /// <summary>
+        /// Запустить приложение асинхронно
+        /// </summary>
         public async Task LaunchAsync()
         {
-            //await _connectionController.RunAsync();
+            await _connectionController.RunAsync();
         }
     
     }

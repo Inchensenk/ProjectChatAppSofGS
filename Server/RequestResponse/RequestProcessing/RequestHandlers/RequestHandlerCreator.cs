@@ -34,8 +34,8 @@ namespace Server.RequestResponse.RequestProcessing.RequestHandlers
                 case NetworkMessageCode.SearcRequestCode:
                     return new SearchUserRequestHandler(mapper, connectionController);
 
-                case NetworkMessageCode.CreateDialogRequestCode:
-                    return new CreateDialogRequestHandler(mapper, connectionController);
+                case NetworkMessageCode.CreateConversationRequestCode:
+                    return new CreateConversationRequestHandler(mapper, connectionController);
 
                 case NetworkMessageCode.SendMessageRequestCode:
                     return new SendMessageRequestHandler(mapper, connectionController);
@@ -43,8 +43,8 @@ namespace Server.RequestResponse.RequestProcessing.RequestHandlers
                 case NetworkMessageCode.DeleteMessageRequestCode:
                     return new DeleteMessageRequestHandler(mapper, connectionController);
 
-                case NetworkMessageCode.DeleteDialogRequestCode:
-                    return new DeleteDialogRequestHandler(mapper, connectionController);
+                case NetworkMessageCode.DeleteConversationRequestCode:
+                    return new DeleteConversationRequestHandler(mapper, connectionController);
 
                 case NetworkMessageCode.SignOutRequestCode:
                     return new SignOutRequestHandler(mapper, connectionController);

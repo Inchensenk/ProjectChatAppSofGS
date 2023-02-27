@@ -8,6 +8,9 @@ using System.Windows.Input;
 
 namespace Client.Commands
 {
+    /// <summary>
+    /// Команда для закрытия окна приложения
+    /// </summary>
     public class CloseWindowCommand : BaseCommand
     {
         public override bool CanExecute(object parameter) => true;

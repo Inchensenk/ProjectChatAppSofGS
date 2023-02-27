@@ -53,6 +53,6 @@ namespace Server.Net.Interfaces
         /// </summary>
         /// <param name="userId">Идентификатор пользователя</param>
         /// <param name="networkPrividerId">Идентификатор сетевого провайдера</param>
-        public void DisconnectUser(int userId, int networkPrividerId);
+        public void DisconnectUser(int userId, int networkProviderId);
     }
 }

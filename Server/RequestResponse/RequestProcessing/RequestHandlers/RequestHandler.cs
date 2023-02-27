@@ -75,14 +75,20 @@ namespace Server.RequestResponse.RequestProcessing.RequestHandlers
 
         }
 
-        private void SendErrorResponse<TResponse, TResponseDTO>(IServerNetworkProvider networkProvider, TResponse response, NetworkMessageCode deleteMessageResponseCode)
+        /// <summary>
+        /// Отправка ошибки в качестве ответа на сетевое сообщение
+        /// </summary>
+        /// <typeparam name="TResponse">Тип объекта представляющего ответ</typeparam>
+        /// <typeparam name="TResponseDTO">Тип объекта, представляющего DTO - ответ</typeparam>
+        /// <param name="networkProvider">Сетевой провайдер</param>
+        /// <param name="response">Ответ на сетевое сообщение</param>
+        /// <param name="code">Код сетевого сообщения</param>
+        protected void SendErrorResponse<TResponse, TResponseDTO>(IServerNetworkProvider networkProvider, TResponse response, NetworkMessageCode code)
             where TResponseDTO : class
         {
             byte[] responseBytes = NetworkMessageConverter<TResponse, TResponseDTO>.Convert(response, code);
-
-            //_conectionController.BroadcastError(responseBytes, networkProvider);
+            _conectionController.BroadcastError(responseBytes, networkProvider);
         }
-
 
 
 
@@ -94,5 +100,20 @@ namespace Server.RequestResponse.RequestProcessing.RequestHandlers
         /// <param name="networkProvider">Сетевой провайдер</param>
         /// <returns>Ответ на сетевое сообщение в виде массива байт</returns>
         protected abstract byte[] OnProcess(DbService dbService, NetworkMessage networkMessage, IServerNetworkProvider networkProvider);
+
+
+        /// <summary>
+        /// вывод в консодь отчета о запросе и ответе
+        /// </summary>
+        /// <param name="networkProviderId">Идентификатор сетевого провайдера</param>
+        /// <param name="requestCode">Код запроса</param>
+        /// <param name="responseCode">Код ответа</param>
+        /// <param name="request">Запрос</param>
+        /// <param name="responseStatus">Статус ответа</param>
+        protected void PrintReport(int networkProviderId, NetworkMessageCode requestCode, NetworkMessageCode responseCode, string request, NetworkResponseStatus responseStatus)
+        {
+            ReportPrinter.PrintRequestReport(networkProviderId, requestCode, request);
+            ReportPrinter.PrintResponseReport(networkProviderId, responseCode, responseStatus);
+        }
     }
 }

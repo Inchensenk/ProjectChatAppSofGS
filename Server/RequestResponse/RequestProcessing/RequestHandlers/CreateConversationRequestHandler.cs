@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Common.DTO.Responses;
 using Common.Network;
 using Server.EFCore.DatabaseServices;
 using Server.Net;
@@ -17,13 +18,12 @@ namespace Server.RequestResponse.RequestProcessing.RequestHandlers
         /// </summary>
         /// <param name="mapper"></param>
         /// <param name="connectionController"></param>
-        public CreateConversationRequestHandler(IMapper mapper, IConnectionController connectionController) : base(mapper, connectionController)
-        {
-        }
+        public CreateConversationRequestHandler(IMapper mapper, IConnectionController connectionController) : base(mapper, connectionController) { }
 
         protected override void OnError(NetworkMessage networkMessage, ServerNetworkProvider networkProvider)
         {
             CreateConversationResponse errorResponse = new CreateConversationResponse(NetworkResponseStatus.FatalError);
+            SendErrorResponse<CreateConversationResponse, CreateConversationResponseDTO>(networkProvider, errorResponse, NetworkMessageCode.CreateConversationResponseCode);
         }
 
         protected override byte[] OnProcess(DbService dbService, NetworkMessage networkMessage, IServerNetworkProvider networkProvider)

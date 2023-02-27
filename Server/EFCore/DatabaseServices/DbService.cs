@@ -78,7 +78,7 @@ namespace Server.EFCore.DatabaseServices
         /// </summary>
         /// <param name="phoneNumber"></param>
         /// <returns>Если пользовательнайден, то возвращается найденный пользователь, в противном случае возвращается null</returns>
-        public static User? FindUserByPhoneNumber(string phoneNumber)
+        public User? FindUserByPhoneNumber(string phoneNumber)
         {
             using (var dbContext = new ChatDbContext())
             {
@@ -119,7 +119,7 @@ namespace Server.EFCore.DatabaseServices
         /// </summary>
         /// <param name="user">Пользователь</param>
         /// <returns>Список бесед</returns>
-        public static List<Conversation> FindConversationsByUser(User user)
+        public List<Conversation> FindConversationsByUser(User user)
         {
             using (var dbContext = new ChatDbContext())
             {
@@ -182,7 +182,7 @@ namespace Server.EFCore.DatabaseServices
         /// </summary>
         /// <param name="deleteConversationRequestDTO">DTO - запрос на удаление беседы</param>
         /// <returns>Найденная беседа, если она существует в базе данных, иначе null</returns>
-        public static Conversation? FindConversation(ExtendedDeleteConversationRequestDTO deleteConversationRequestDTO)
+        public Conversation? FindConversation(ExtendedDeleteConversationRequestDTO deleteConversationRequestDTO)
         {
             using (var dbContext = new ChatDbContext())
             {
@@ -226,7 +226,7 @@ namespace Server.EFCore.DatabaseServices
         /// </summary>
         /// <param name="message">Сообщение</param>
         /// <returns>Идентификатор пользователя</returns>
-        public static int GetRecipientUserId(Message message)
+        public int GetRecipientUserId(Message message)
         {
             using (var dbContext = new ChatDbContext())
             {
@@ -243,7 +243,7 @@ namespace Server.EFCore.DatabaseServices
         /// </summary>
         /// <param name="deleteMessageRequestDTO">Dto запрос на удаление сообщения</param>
         /// <returns>В случае удачного поиска возвращает сообщение, иначе - null</returns>
-        public static Message? FindMessage(ExtendedDeleteMessageRequestDTO deleteMessageRequestDTO)
+        public Message? FindMessage(ExtendedDeleteMessageRequestDTO deleteMessageRequestDTO)
         {
             using (var dbContext = new ChatDbContext())
             {
@@ -258,7 +258,7 @@ namespace Server.EFCore.DatabaseServices
         /// Удаление сообщения из БД
         /// </summary>
         /// <param name="message">Сообщение</param>
-        public static void DeleteMessage(Message message)
+        public void DeleteMessage(Message message)
         {
             using (var dbContext = new ChatDbContext())
             {
@@ -272,7 +272,7 @@ namespace Server.EFCore.DatabaseServices
         /// Удаляет беседу из базы данных
         /// </summary>
         /// <param name="conversation">Беседа</param>
-        public static void DeleteConversation(Conversation conversation)
+        public void DeleteConversation(Conversation conversation)
         {
             using (var dbContext = new ChatDbContext())
             {
@@ -288,7 +288,7 @@ namespace Server.EFCore.DatabaseServices
         /// <param name="conversationId">Идентификатор беседы</param>
         /// <param name="userId">Идентификатор пользователя</param>
         /// <returns>Идентификатор собеседника</returns>
-        public static int GetInterlocutorId(int conversationId, int userId)
+        public int GetInterlocutorId(int conversationId, int userId)
         {
             using (var dbContext = new ChatDbContext())
             {

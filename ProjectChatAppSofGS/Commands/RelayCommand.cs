@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace Client.MVVM.Core
+namespace Client.Commands
 {
     /*Интерфейс ICommand — это контракт кода для команд, написанных в .NET для приложений среда выполнения Windows. 
      *Эти команды обеспечивают поведение команд для элементов пользовательского интерфейса, таких как среда выполнения Windows XAML Button и, в частности, .AppBarButton 
@@ -23,10 +23,8 @@ namespace Client.MVVM.Core
         /// </summary>
         private Func<object, bool> canExecute;
 
-
-        private string v;
-        private Func<object, string> value;
-
+        //private string v;
+        //private Func<object, string> value;
 
 
         /// <summary>
@@ -48,8 +46,6 @@ namespace Client.MVVM.Core
             this.execute = execute;
             this.canExecute = canExecute;
         }
-
-
 
 
         /// <summary>

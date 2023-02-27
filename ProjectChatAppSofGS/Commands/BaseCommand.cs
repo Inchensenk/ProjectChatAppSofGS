@@ -8,7 +8,7 @@ using System.Windows.Input;
 namespace Client.Commands
 {
     /// <summary>
-    /// реализация от ии
+    /// Базовый класс для комманд (реализация от ии)
     /// </summary>
     public abstract class BaseCommand : ICommand
     {

@@ -1,6 +1,9 @@
 ﻿using AutoMapper;
 using Common.DTO;
+using Common.DTO.Requests;
+using Common.DTO.Responses;
 using Server.EFCore.Entities;
+using Server.RequestResponse.Responses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +22,9 @@ namespace Server.AutoMapper.Profiles
         public UserMapperConfiguration()
         {
             CreateMap<User, UserDTO>().ReverseMap();
+            CreateMap<User, SignUpRequestDTO>().ReverseMap();
+            CreateMap<UserSearchResponse, UserSearchResponseDTO>().ReverseMap();
+            CreateMap<int, User>().ForMember(dest => dest.Id, exp => exp.MapFrom(integ => integ.GetHashCode()));
         }
     }
 }

@@ -6,11 +6,7 @@ using Server.EFCore.DatabaseServices;
 using Server.Net;
 using Server.Net.Interfaces;
 using Server.RequestResponse.RequestProcessing.RequestHandlers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Server.RequestResponse.RequestProcessing
 {
@@ -53,7 +49,7 @@ namespace Server.RequestResponse.RequestProcessing
         /// <param name="request">Pапрос от клиента</param>
         /// <param name="networkProvider">Сетевой провайдер</param>
         /// <returns>Ответ на запрос клиента в виде массива байт</returns>
-        public byte[] ProcessRequest(byte[] request, IServerNetworProvider networkProvider)
+        public byte[] ProcessRequest(byte[] request, IServerNetworkProvider networkProvider)
         {
             NetworkMessage requestMessage = SerializationHelper.Deserialize<NetworkMessage>(request);
 
@@ -68,16 +64,12 @@ namespace Server.RequestResponse.RequestProcessing
         /// <param name="networkMessage">Сетевое сообщение</param>
         /// <param name="networkProvider">Сетевой провайдер отправивший запрос</param>
         /// <returns>Ответ на запрос клиента в виде массива байт</returns>
-        private byte[] ProcessRequest(NetworkMessage networkMessage, IServerNetworProvider networkProvider)
+        private byte[] ProcessRequestMessage(NetworkMessage networkMessage, IServerNetworkProvider networkProvider)
         {
             RequestHandler handler = RequestHandlerCreator.FactoryMethod(_mapper, _conectionController, networkMessage.Code);
 
             return handler.Process(_dbService, networkMessage, networkProvider);
         }
 
-        public byte[] ProcessRequest(byte[] data, IServerNetworkProvider networkProviderId)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

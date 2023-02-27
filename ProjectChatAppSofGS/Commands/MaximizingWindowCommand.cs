@@ -8,6 +8,9 @@ using System.Windows.Input;
 
 namespace Client.Commands
 {
+    /// <summary>
+    /// Команда открывает окно приложения на весь экран
+    /// </summary>
     class MaximizingWindowCommand : BaseCommand
     {
         public override bool CanExecute(object parameter) => true;
