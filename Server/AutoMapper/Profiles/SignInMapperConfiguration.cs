@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace Server.AutoMapper.Profiles
 {
+    /// <summary>
+    /// Конфигурация маппинга авторизации
+    /// </summary>
     public class SignInMapperConfiguration : Profile
     {
         public SignInMapperConfiguration()

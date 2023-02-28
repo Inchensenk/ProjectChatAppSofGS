@@ -74,6 +74,11 @@ namespace Client.Models
         /// <inheritdoc cref="IsRead"/>
         private bool _isRead;
 
+        private DateTime _sendDateTime;
+
+        /// <inheritdoc cref="FromUser"/>
+        private User? _fromUser;
+
         /// <inheritdoc cref="IsCurrentUserMessage"/>
         private bool _isCurrentUserMessage;
 
@@ -88,6 +93,16 @@ namespace Client.Models
         public string MessageText { get => _messageText; set { _messageText = value; OnPropertyChanged(); } }
 
         /// <summary>
+        /// Пользователь являющийся отправителем сообщения
+        /// </summary>
+        public User? FromUser { get => _fromUser; set { _fromUser = value; OnPropertyChanged(); } }
+
+        /// <summary>
+        /// Дата и время отправки сообщения
+        /// </summary>
+        public DateTime SendDateTime { get => _sendDateTime; set { _sendDateTime = value; OnPropertyChanged(); } }
+
+        /// <summary>
         /// Флаг, который хранит информацию: прочитано сообщение или нет
         /// </summary>
         public bool IsRead { get => _isRead; set { _isRead = value; OnPropertyChanged(); } }
@@ -97,5 +112,30 @@ namespace Client.Models
         /// </summary>
         public bool IsCurrentUserMessage { get => _isCurrentUserMessage; set { _isCurrentUserMessage = value; OnPropertyChanged(); } }
 
+        /// <summary>
+        /// Время отправки сообщения
+        /// </summary>
+        public string Time { get => SendDateTime.ToString("dd-MM-yyyy hh:mm:ss"); }
+
+
+        public Message()
+        {
+            Id = 0;
+            MessageText = "";
+            FromUser = null;
+            SendDateTime = DateTime.Now;
+            IsRead = false;
+            IsCurrentUserMessage = false;
+        }
+
+        public Message( string messageText, User? fromUserAccount, DateTime sendDateTime, bool isRead, bool isCurrentUserMessage)
+        {
+            Id = 0;
+            MessageText = messageText;
+            FromUser = fromUserAccount;
+            SendDateTime = DateTime.Now;
+            IsRead = isRead;
+            IsCurrentUserMessage = isCurrentUserMessage;
+        }
     }
 }

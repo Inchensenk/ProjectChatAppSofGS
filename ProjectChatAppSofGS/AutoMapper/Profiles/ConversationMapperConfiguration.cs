@@ -26,8 +26,8 @@ namespace Client.AutoMapper.Profiles
             CreateMap<Conversation, CreateConversationRequestDTO>().ForMember(dest => dest.UsersId, exp => exp.MapFrom(conversation => conversation.UserListingСonversationalist)).ReverseMap();
 
 
-            CreateMap<Conversation, CreateConversationResponse>().ForMember(dest => dest.ConversationId, exp => exp.MapFrom(dial => dial.Id))
-                                                                 .ForMember(dest => dest.MessageId, exp => exp.MapFrom(dial => dial.MessageListing.First().Id)).ReverseMap();
+            CreateMap<Conversation, CreateConversationResponse>().ForMember(dest => dest.ConversationId, exp => exp.MapFrom(conversation => conversation.Id))
+                                                                 .ForMember(dest => dest.MessageId, exp => exp.MapFrom(Conversation => Conversation.MessageListing.First().Id)).ReverseMap();
 
         }
     }

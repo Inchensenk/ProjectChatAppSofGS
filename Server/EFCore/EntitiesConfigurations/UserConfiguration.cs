@@ -12,17 +12,17 @@ namespace Server.EFCore.EntitiesConfigurations
     public class UserConfiguration : IEntityTypeConfiguration<User>
     {
         /// <summary>
-        /// Максимальная длина пароля
+        /// Максимальная длинна пароля
         /// </summary>
         private const int MAX_LENGTH_OF_PASSWORD = 14;
 
         /// <summary>
-        /// Максимальная длина имени
+        /// Максимальная длинна имени
         /// </summary>
         private const int MAX_NAME_LENGTH = 20;
 
         /// <summary>
-        /// Максимальная длина телефона
+        /// Длинна номера телефона
         /// </summary>
         private const int PHONE_NUMBER_LENGTH = 12;
 

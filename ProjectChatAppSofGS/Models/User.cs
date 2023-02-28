@@ -139,7 +139,14 @@ namespace Client.Models
         /// <summary>
         /// Пароль
         /// </summary>
-        public string Password { get => _password; set { _password = value; OnPropertyChanged(); } } 
-        
+        public string Password { get => _password; set { _password = value; OnPropertyChanged(); } }
+
+        public User()
+        {
+            Id= 0;
+            FirstName = "";
+            PhoneNumber = "";
+            Password= "";
+        }
     }
 }

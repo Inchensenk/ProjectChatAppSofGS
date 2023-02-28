@@ -20,7 +20,7 @@ namespace Server.RequestResponse.RequestProcessing
         /// <param name="info">Информация о запросе</param>
         public static void PrintRequestReport(int networkProviderId, NetworkMessageCode code, string info)
         {
-            Console.WriteLine($"[{DateTime.Now:dd/MM/yyyy HH:mm:ss}] Id клиента: {networkProviderId}. Запрос: код операции: {code}. " + info);
+            Console.WriteLine($"[{DateTime.Now:dd/MM/yyyy HH:mm:ss}] Идентификатор клиента: {networkProviderId}. Запрос: код операции: {code}. " + info);
         }
 
         /// <summary>
@@ -31,7 +31,7 @@ namespace Server.RequestResponse.RequestProcessing
         /// <param name="status">Статус ответа</param>
         public static void PrintResponseReport(int networkProviderId, NetworkMessageCode code, NetworkResponseStatus status)
         {
-            Console.WriteLine($"[{DateTime.Now:dd/MM/yyyy HH:mm:ss}] Id клиента: {networkProviderId}. Ответ: код операции: {code}. Статус ответа: {status}.");
+            Console.WriteLine($"[{DateTime.Now:dd/MM/yyyy HH:mm:ss}] Идентификатор клиента: {networkProviderId}. Ответ: код операции: {code}. Статус ответа: {status}.");
         }
     }
 }

@@ -1,6 +1,10 @@
 ﻿using AutoMapper;
 using Client.Models;
+using Client.RequestResponse.Requests;
+using Client.RequestResponse.Responses;
 using Common.DTO;
+using Common.DTO.Requests;
+using Common.DTO.Responses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +23,18 @@ namespace Client.AutoMapper.Profiles
             /*В методе CreateMap первый параметр: откуда маппит, а второй: куда маппить. 
              *Метод ReverseMap() позволяет маппить в обратную сторону при необходимости*/
             CreateMap<Message, MessageDTO>().ReverseMap();
+
+            CreateMap<SendMessageRequest, SendMessageRequestDTO>().ReverseMap();
+
+            CreateMap<SendMessageResponseDTO, SendMessageResponse>().ReverseMap();
+
+            CreateMap<ExtendedDeleteMessageRequest, ExtendedDeleteMessageRequestDTO>().ReverseMap();
+
+            CreateMap<DeleteMessageRequestDTO, DeleteMessageRequest>().ReverseMap();
+
+            CreateMap<ExtendedReadMessagesRequest, ExtendedReadMessagesRequestDTO>().ReverseMap();
+
+            CreateMap<ReadMessagesRequestDTO,ReadMessagesRequest>().ReverseMap();
         }
     }
 }
