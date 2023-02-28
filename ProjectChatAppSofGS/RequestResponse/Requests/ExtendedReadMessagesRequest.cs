@@ -36,7 +36,7 @@ namespace Client.RequestResponse.Requests
         {
             MessageListincId = messageListincId;
             UserId = userId;
-            conversationId = conversationId;
+            ConversationId = conversationId;
         }
 
     }

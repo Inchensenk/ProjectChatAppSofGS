@@ -118,6 +118,9 @@ namespace Client.Models
         public string Time { get => SendDateTime.ToString("dd-MM-yyyy hh:mm:ss"); }
 
 
+        /// <summary>
+        /// Конструктор по умолчанию
+        /// </summary>
         public Message()
         {
             Id = 0;
@@ -128,7 +131,14 @@ namespace Client.Models
             IsCurrentUserMessage = false;
         }
 
-        public Message( string messageText, User? fromUserAccount, DateTime sendDateTime, bool isRead, bool isCurrentUserMessage)
+        /// <summary>
+        /// Конструктор с параметрами
+        /// </summary>
+        /// <param name="messageText">Текст сообщения</param>
+        /// <param name="fromUserAccount">Плользователь отправивший сообщение</param>
+        /// <param name="isRead">Прочитано сообщение? По умолчанию - значение false</param>
+        /// <param name="isCurrentUserMessage">Является ли отправителем этого сообщения текущий пользователь?</param>
+        public Message( string messageText, User? fromUserAccount, bool isRead, bool isCurrentUserMessage)
         {
             Id = 0;
             MessageText = messageText;
