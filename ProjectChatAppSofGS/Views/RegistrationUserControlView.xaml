@@ -194,8 +194,7 @@
         <!--Правая часть Пользовательского элемента-->
         <Border Grid.Column="1"
                         Background="#ffffff"
-                        CornerRadius="0 10 10 0"
-                        MouseDown="OnBorderMouseDown">
+                        CornerRadius="0 10 10 0">
             <Grid>
                 <!--Close Icon-->
                 <materialDesign:PackIcon Kind="Close"
