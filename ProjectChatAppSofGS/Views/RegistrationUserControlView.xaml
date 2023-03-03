@@ -8,7 +8,7 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
              xmlns:viewmodels="clr-namespace:Client.ViewModels" 
              d:DataContext="{d:DesignInstance Type=viewmodels:RegistrationUserControlViewModel}" 
-             d:DesignWidth="800" Height="630"
+             d:DesignWidth="800" Height="644"
               
              Background="Transparent"
              FontSize="18"
@@ -266,7 +266,8 @@
                                         Height="45"
                                         Style="{StaticResource MaterialDesignFlatButton}"
                                         Margin="5 0 0 0"
-                                        materialDesign:ButtonAssist.CornerRadius="22"/>
+                                        materialDesign:ButtonAssist.CornerRadius="22"
+                                        Command="{Binding NavigateAuthorizationCommand}"/>
 
                     </StackPanel>
 

@@ -7,12 +7,11 @@
              mc:Ignorable="d" 
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
              xmlns:vms="clr-namespace:Client.ViewModels" 
-             d:DataContext="{d:DesignInstance Type=vms:AuthorizationUserControlViewModel}"
-             d:DesignHeight="630" 
+             d:DataContext="{d:DesignInstance Type=vms:AuthorizationUserControlViewModel}" 
              d:DesignWidth="800"
              Background="Transparent"
              FontSize="18"
-             FontFamily="{DynamicResource MaterialDesignFont}">
+             FontFamily="{DynamicResource MaterialDesignFont}" Height="645">
 
 
 
@@ -246,7 +245,8 @@
                                         FontSize="18"
                                         Width="120"
                                         Height="45"
-                                        materialDesign:ButtonAssist.CornerRadius="22"/>
+                                        materialDesign:ButtonAssist.CornerRadius="22"
+                                        Command="{Binding NavigateChatsCommand}"/>
 
                         <Button Content="Sign Up"
                                         FontSize="16"
@@ -254,7 +254,8 @@
                                         Height="45"
                                         Style="{StaticResource MaterialDesignFlatButton}"
                                         Margin="5 0 0 0"
-                                        materialDesign:ButtonAssist.CornerRadius="22"/>
+                                        materialDesign:ButtonAssist.CornerRadius="22"
+                                        Command="{Binding NavigateRegistrationCommand}"/>
 
                     </StackPanel>
 
@@ -262,7 +263,6 @@
 
             </Grid>
         </Border>
-    
 
 
 
@@ -296,7 +296,8 @@
 
 
 
-    <!--<Border MinWidth="750" 
+
+        <!--<Border MinWidth="750" 
                 Margin="15,0,15,0" 
                 Background= "Transparent"
                 VerticalAlignment="Center"
@@ -313,7 +314,9 @@
                            Margin="0 0 0 20"/>
 
 
-                --><!--Текстбокс с подсказкой "Введите логин", подсказка анимирует при в вводе--><!--
+                -->
+        <!--Текстбокс с подсказкой "Введите логин", подсказка анимирует при в вводе-->
+        <!--
                 <TextBox x:Name="textBoxLogin"
                          materialDesign:HintAssist.Hint="Введите логин"
                          Style="{StaticResource MaterialDesignOutlinedTextBox}"/>
@@ -324,7 +327,9 @@
                              Style="{StaticResource MaterialDesignOutlinedRevealPasswordBox}"/>
 
 
-                --><!--IsDefault="True" делает привязку кнопки к клавише Enter клавиатуры--><!--
+                -->
+        <!--IsDefault="True" делает привязку кнопки к клавише Enter клавиатуры-->
+        <!--
                 <Button x:Name="authButton"
                         Content="Войти"
                         Margin="0 20"
