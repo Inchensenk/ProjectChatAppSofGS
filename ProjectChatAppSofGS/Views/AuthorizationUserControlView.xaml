@@ -5,16 +5,83 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Client.Views"
              mc:Ignorable="d" 
-              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
              xmlns:vms="clr-namespace:Client.ViewModels" 
              d:DataContext="{d:DesignInstance Type=vms:AuthorizationUserControlViewModel}"
              d:DesignHeight="630" 
-             d:DesignWidth="800">
+             d:DesignWidth="800"
+             Background="Transparent"
+             FontSize="18"
+             FontFamily="{DynamicResource MaterialDesignFont}">
 
 
     
-    <Grid>
-        <Border MinWidth="750" 
+    <Grid Margin="20">
+        <Grid.Effect>
+            <DropShadowEffect BlurRadius="30"
+                              ShadowDepth="1"
+                              Opacity="0.4"/>
+        </Grid.Effect>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="1.22*"/>
+        </Grid.ColumnDefinitions>
+        
+        <!--Левая часть-->
+        <Border Background="#07bf96"
+                CornerRadius="10 0 0 10"
+                ClipToBounds="True">
+
+            <Border.Clip>
+                <RectangleGeometry Rect="0 0 400 605"
+                                   RadiusX="10"
+                                   RadiusY="10"/>
+            </Border.Clip>
+            
+            <!--Titles-->
+            <StackPanel Margin="0 120 0 0"
+                        VerticalAlignment="Top">
+                <TextBlock FontSize="46"
+                           FontWeight="Light"
+                           Text="Sign In"/>
+
+            </StackPanel>
+        </Border>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <!--<Border MinWidth="750" 
                 Margin="15,0,15,0" 
                 Background= "Transparent"
                 VerticalAlignment="Center"
@@ -31,7 +98,7 @@
                            Margin="0 0 0 20"/>
 
 
-                <!--Текстбокс с подсказкой "Введите логин", подсказка анимирует при в вводе-->
+                --><!--Текстбокс с подсказкой "Введите логин", подсказка анимирует при в вводе--><!--
                 <TextBox x:Name="textBoxLogin"
                          materialDesign:HintAssist.Hint="Введите логин"
                          Style="{StaticResource MaterialDesignOutlinedTextBox}"/>
@@ -42,7 +109,7 @@
                              Style="{StaticResource MaterialDesignOutlinedRevealPasswordBox}"/>
 
 
-                <!--IsDefault="True" делает привязку кнопки к клавише Enter клавиатуры-->
+                --><!--IsDefault="True" делает привязку кнопки к клавише Enter клавиатуры--><!--
                 <Button x:Name="authButton"
                         Content="Войти"
                         Margin="0 20"
@@ -61,6 +128,6 @@
                         Command="{Binding NavigateRegistrationCommand}"/>
 
             </StackPanel>
-        </Border>
+        </Border>-->
     </Grid>
 </UserControl>

@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Client.Views" xmlns:viewmodels="clr-namespace:Client.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:ChatsUserControlViewModel}"
+             xmlns:local="clr-namespace:Client.Views" 
+             xmlns:viewmodels="clr-namespace:Client.ViewModels" 
+             d:DataContext="{d:DesignInstance Type=viewmodels:ChatsUserControlViewModel}"
              
              mc:Ignorable="d" 
              d:DesignHeight="630" d:DesignWidth="800"
@@ -41,29 +43,14 @@
                         Orientation="Horizontal"
                         Background="#292B2F">
 
-                <Border CornerRadius="25"
-                        Width="30"
-                        Height="30"
-                        Background="#3BFF6F"
-                        Margin="18,0,0,0"/>
-
-                <StackPanel VerticalAlignment="Center">
-                    <Label Content="UserName"
-                           Foreground="White"
-                           FontWeight="SemiBold"
-                           Margin=" 0,-5,0,-5"/>
-                    <Label Content="Custom Status"
-                           Foreground="Gray"
-                           FontWeight="SemiBold"
-                           FontSize="10"
-                           Margin=" 0,-8,0,-5"/>
-
-                </StackPanel>
+                <StackPanel VerticalAlignment="Center"/>
 
                 <!--IsCancel="True" делает привязку кнопки к лавише Esc у клавиатуры-->
                 <Button Content="Выход"
                         Command="{Binding NavigateAuthorizationCommand}"
-                        IsCancel="True"/>
+                        IsCancel="True"
+                        VerticalAlignment="Center"
+                        Margin="60 0 0 0"/>
             </StackPanel>
 
         </Grid>

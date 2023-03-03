@@ -24,5 +24,10 @@ namespace Client.Views
         {
             InitializeComponent();
         }
+
+        private void OnBorderMouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 }
