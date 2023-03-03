@@ -211,15 +211,15 @@
                                     Margin="75 0">
 
                     <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                                     Text="John.Doe_am"
-                                     materialDesign:HintAssist.Hint="Имя пользователя"
+                                     Text="+79198885566"
+                                     materialDesign:HintAssist.Hint="Номер телефона"
                                      materialDesign:HintAssist.FloatingOffset="0, -20"
                                      BorderBrush="#c5c8cc"
                                      BorderThickness="0 0 0 1.5"/>
 
                     <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                                     Text="JohnDoe@gmail.com"
-                                     materialDesign:HintAssist.Hint="Имя пользователя"
+                                     Text="Георгий"
+                                     materialDesign:HintAssist.Hint="Имя"
                                      materialDesign:HintAssist.FloatingOffset="0, -20"
                                      BorderBrush="#c5c8cc"
                                      Margin="0 27 0 0"
