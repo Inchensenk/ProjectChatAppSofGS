@@ -12,7 +12,7 @@
         d:DataContext="{d:DesignInstance Type = vms:ChatsUserControlViewModel}"
         mc:Ignorable="d"
         Title="MainWindow" 
-        Height="700" 
+        Height="800" 
         Width="1200"
         Background="Transparent"
         ResizeMode="NoResize"
@@ -31,15 +31,20 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Border 
+        <Border Margin="5"
                 Background="#3fccae"
                 Grid.RowSpan="1"
                 CornerRadius="10 10 10 10"
                 MouseDown="OnBorderMouseDown">
-
+            
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="10"
+                              ShadowDepth="1"
+                              Opacity="0.4"/>
+            </Border.Effect>
             <Grid Grid.Row="0"
                   HorizontalAlignment="Stretch">
-
+                
                 <Label Content="PIXEL CHAT"
                        Foreground="White"
                        FontWeight="Bold"

@@ -8,10 +8,11 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
              xmlns:vms="clr-namespace:Client.ViewModels" 
              d:DataContext="{d:DesignInstance Type=vms:AuthorizationUserControlViewModel}" 
-             d:DesignWidth="800"
+             d:DesignWidth="1200"
              Background="Transparent"
              FontSize="18"
-             FontFamily="{DynamicResource MaterialDesignFont}" Height="645">
+             FontFamily="{DynamicResource MaterialDesignFont}" 
+             Height="700">
 
 
 
@@ -33,7 +34,7 @@
                 ClipToBounds="True">
 
             <Border.Clip>
-                <RectangleGeometry Rect="0 0 400 605"
+                <RectangleGeometry Rect="0 0 527 660"
                                    RadiusX="10"
                                    RadiusY="10"/>
             </Border.Clip>
@@ -47,21 +48,8 @@
                             VerticalAlignment="Top">
                     <TextBlock FontSize="46"
                            FontWeight="Light"
-                           Text="Sign In"
+                           Text="Авторизация"
                            Foreground="#ffffff"
-                           TextAlignment="Center"/>
-
-                    <TextBlock FontWeight="Light"
-                           FontSize="16"
-                           Foreground="#d1f2eb"
-                           TextAlignment="Center"
-                           Text="to use all features"
-                           Margin="0 15 0 3"/>
-
-                    <TextBlock FontSize="16"
-                           FontWeight="Light"
-                           Text="of the application"
-                           Foreground="#d1f2eb"
                            TextAlignment="Center"/>
                 </StackPanel>
 
@@ -193,9 +181,10 @@
         </Border>
 
         <!--Правая часть Пользовательского элемента-->
-        <Border Grid.Column="1"
-                        Background="#ffffff"
-                        CornerRadius="0 10 10 0">
+        <Border Background="AliceBlue"
+                CornerRadius="0 10 10 0" 
+                Margin="0,0,5,0" 
+                Grid.Column="1">
             <Grid>
                 <!--Close Icon-->
                 <materialDesign:PackIcon Kind="Close"
@@ -227,30 +216,22 @@
                                          BorderThickness="0 0 0 1.5"/>
 
 
-                    <CheckBox Margin="0 50 0 20"
-                                      FontSize="13">
-                        <TextBlock>
-                                    <Run Foreground="#b6b6b6">By signing I agree with</Run>
-                                    <Run Foreground="#07bf96">terms and conditions</Run>
 
-
-                        </TextBlock>
-                    </CheckBox>
 
                     <StackPanel Orientation="Horizontal"
                                 Margin="0 100 0 0">
-                        <Button Content="Sign In"
+                        <Button Content="Авторизация"
                                         Background="#05b790"
                                         Foreground="#ffffff"
                                         FontSize="18"
-                                        Width="120"
+                                        Width="150"
                                         Height="45"
                                         materialDesign:ButtonAssist.CornerRadius="22"
                                         Command="{Binding NavigateChatsCommand}"/>
 
-                        <Button Content="Sign Up"
+                        <Button Content="Регистрация"
                                         FontSize="16"
-                                        Width="120"
+                                        Width="150"
                                         Height="45"
                                         Style="{StaticResource MaterialDesignFlatButton}"
                                         Margin="5 0 0 0"
