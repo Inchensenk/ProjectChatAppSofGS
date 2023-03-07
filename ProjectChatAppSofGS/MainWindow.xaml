@@ -23,7 +23,7 @@
         FontFamily="{DynamicResource MaterialDesignFont}"
         >
 
-    <Grid Background="Black">
+    <Grid Background="Transparent">
 
         <Grid.RowDefinitions>
             <!--Строка заголовка-->
@@ -64,8 +64,7 @@
                             Foreground="White"
                             FontWeight="Bold"
                             Margin="0,0,0,3"
-                            Command="{Binding MinimizingWindowCommand}"
-                            Style="{StaticResource MaterialDesignToolForegroundButton}"
+                            Command="{Binding MinimizingWindowCommand}"                            
                             Padding="0"/>
 
                     <Button Width="20"
@@ -75,8 +74,7 @@
                             BorderThickness="0"
                             Foreground="White"
                             FontWeight="Bold" Cursor="Hand"
-                            Command="{Binding MaximizingWindowCommand}"
-                            Style="{StaticResource MaterialDesignToolForegroundButton}"
+                            Command="{Binding MaximizingWindowCommand}"                            
                             Padding="0"/>
 
                     <Button Width="20"
@@ -88,8 +86,7 @@
                             FontWeight="Bold"
                             FontSize="10"
                             Command="{Binding CloseWindowCommand}" 
-                            Cursor="Hand"
-                            Style="{StaticResource MaterialDesignToolForegroundButton}"
+                            Cursor="Hand"     
                             Padding="0"/>
                 </StackPanel>
             </Grid>

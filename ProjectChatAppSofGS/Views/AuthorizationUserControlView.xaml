@@ -185,7 +185,12 @@
         <!--Правая часть Пользовательского элемента-->
         <Border Background="white"
                 CornerRadius="5 5 5 5" 
-                Grid.Column="1" Height="698" VerticalAlignment="Center" HorizontalAlignment="Left" Width="594">
+                Grid.Column="1" 
+                Height="698" 
+                Width="600"
+                VerticalAlignment="Center" 
+                HorizontalAlignment="Left">
+            
             <Grid>
 
                 <!--Ввод данных-->

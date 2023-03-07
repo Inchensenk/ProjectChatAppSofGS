@@ -34,7 +34,7 @@
                     Width="514">
 
                 <Border.Clip>
-                    <RectangleGeometry Rect="0 0 515 700"
+                    <RectangleGeometry Rect="0 0 599 698"
                                    RadiusX="5"
                                    RadiusY="5"/>
                 </Border.Clip>
